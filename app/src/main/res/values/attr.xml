@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CodeView">
+        <attr name="length" format="integer" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="dividerColor" format="color" />
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="code" format="string" />
+        <attr name="codeColor" format="color" />
+        <attr name="pointRadius" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="showType" format="enum">
+            <enum name="word" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <attr name="cbd_calendar_row" format="integer"/>
+
+    <declare-styleable name="CalendarDateView">
+        <attr name="cbd_calendar_row"/>
+    </declare-styleable>
+
+    <!-- 宽高比的图片 -->
+    <declare-styleable name="ProportionImageView">
+        <!-- 宽度比例 float -->
+        <attr name="width_proportion" format="float" />
+        <!-- 高度比例 float -->
+        <attr name="height_proportion" format="float" />
+        <!-- 圆角 -->
+        <attr name="corners" format="dimension" />
+    </declare-styleable>
+
+    <!--拖动-->
+    <declare-styleable name="DragView">
+        <attr name="gray_Imag" format="reference" />
+        <attr name="src_Imag" format="reference" />
+        <attr name="center_Imag" format="reference" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="WrapEmptyRecyclerView">
+        <attr name="emptyPageLayout" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LoopView">
+        <attr name="lineColor" format="color"/>
+        <attr name="topBottomTextColor" format="color"/>
+        <attr name="centerTextColor" format="color"/>
+        <attr name="contentSize" format="dimension"/>
+        <attr name="canLoop" format="boolean"/>
+        <attr name="initPosition" format="integer"/>
+        <attr name="drawItemCount" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="CircleProgress">
+        <attr name="circle_progress" format="integer"/>
+        <attr name="circle_max" format="integer"/>
+        <attr name="circle_unfinished_color" format="color"/>
+        <attr name="circle_finished_color" format="color"/>
+        <attr name="circle_text_size" format="dimension"/>
+        <attr name="circle_text_color" format="color"/>
+        <attr name="circle_prefix_text" format="string"/>
+        <attr name="circle_suffix_text" format="string"/>
+        <attr name="circle_title" format="string"/>
+    </declare-styleable>
+</resources>

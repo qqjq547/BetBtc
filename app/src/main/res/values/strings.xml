@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">BetBtc</string>
+
+
+    <string name="tab_home">首页</string>
+    <string name="tab_data">数据</string>
+    <string name="tab_history">历史</string>
+    <string name="tab_user">我的</string>
+    <string name="network_error_and_late">网络异常，请稍后再试</string>
+    <string name="parse_error_and_late">解析错误，请稍后再试</string>
+    <string name="http_error_and_late">服务器错误，请稍后再试</string>
+    <string name="timeout_and_late">请求超时，请稍后再试</string>
+    <string name="unknow_error_and_late">未知错误，请稍后再试</string>
+    <string name="press_again_to_exit">再按一次退出</string>
+    <string name="dialog_title">温馨提示</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="btc2usdt">BTC/USDT</string>
+    <string name="data_from_huobi">实时数据来自火币网</string>
+    <string name="this_period_bet">本期投注</string>
+    <string name="format_deathline">截止时间：%s</string>
+    <string name="format_period">%s期</string>
+    <string name="my_bet_list">我的注单</string>
+    <string name="bet_times">下注次数</string>
+    <string name="unit_usdt">USDT</string>
+    <string name="compose_bet">组合投注</string>
+    <string name="overage_">余额:</string>
+    <string name="out_of_amount">超出最大额度</string>
+    <string name="ensure_delete_this_bet">确定删除该注单</string>
+    <string name="rise">涨</string>
+    <string name="fall">跌</string>
+
+
+    <string name="share">分享</string>
+    <string name="account_balance">账户余额</string>
+    <string name="platom_award">平台奖励</string>
+    <string name="recharge">充值</string>
+    <string name="widthdraw">提币</string>
+    <string name="balance_detail">收支明细</string>
+
+
+    <string name="menu_recommend">推荐有礼</string>
+    <string name="balance_details">收支明细</string>
+    <string name="setting">设置</string>
+    <string name="safe_center">安全中心</string>
+    <string name="play_tutorial">玩法教程</string>
+    <string name="common_help">常见帮助</string>
+    <string name="relate_custom">联系客服</string>
+    <string name="about_us">关于我们</string>
+    <string name="recharge_coin_type">充值币种</string>
+    <string name="copy">复制</string>
+    <string name="withdraw_address">提币地址</string>
+    <string name="pls_input_address">请输入提币地址</string>
+    <string name="withdraw_amount">提币数量</string>
+    <string name="min_withdraw_amount">最小提币数量10个</string>
+    <string name="all">全部</string>
+    <string name="format_availdable">可用: %s</string>
+    <string name="format_today_left_draw_times">今日剩余提币次数: %s</string>
+    <string name="format_arrive_account">到账数量：%sUSDT</string>
+    <string name="scan_fail">解析失败</string>
+    <string name="scan_pay">扫码</string>
+    <string name="get_camera_permission">请先设置相机权限</string>
+    <string name="pls_inside_code">将二维码放入框内即可扫描</string>
+    <string name="scan_result">扫码结果</string>
+    <string name="empty_notice">空空如也</string>
+
+
+    <string-array name="data_nav">
+        <item>分时</item>
+        <item>1分钟</item>
+        <item>5分钟</item>
+        <item>15分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+    </string-array>
+    <string-array name="huobi_period">
+        <item>1min</item>
+        <item>1min</item>
+        <item>5min</item>
+        <item>15min</item>
+        <item>30min</item>
+        <item>60min</item>
+    </string-array>
+    <string-array name="filter_real_deal">
+        <item>全部</item>
+        <item>收盘价</item>
+        <item>最高价</item>
+        <item>最低价</item>
+        <item>差价</item>
+        <item>平均成交价</item>
+    </string-array>
+
+</resources>

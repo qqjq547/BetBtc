@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/layout_divide_line"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:id="@+id/rgroup_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/bg_white">
+                <RadioButton
+                    android:id="@+id/rbtn_home"
+                    style="@style/rdbtn_nav"
+                    android:drawableTop="@drawable/tab_home_selector"
+                    android:text="@string/tab_home"/>
+                <RadioButton
+                    android:id="@+id/rbtn_data"
+                    style="@style/rdbtn_nav"
+                    android:drawableTop="@drawable/tab_data_selector"
+                    android:text="@string/tab_data"/>
+                <RadioButton
+                    android:id="@+id/rbtn_history"
+                    style="@style/rdbtn_nav"
+                    android:drawableTop="@drawable/tab_history_selector"
+                    android:text="@string/tab_history"/>
+                <RadioButton
+                    android:id="@+id/rbtn_user"
+                    style="@style/rdbtn_nav"
+                    android:drawableTop="@drawable/tab_user_selector"
+                    android:text="@string/tab_user"/>
+            </RadioGroup>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

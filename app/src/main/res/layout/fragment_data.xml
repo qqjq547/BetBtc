@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lin_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_title"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height">
+
+            <RadioGroup
+                android:id="@+id/rgroup_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_data_group"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbtn_trend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/data_check_left_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/space25"
+                    android:paddingRight="@dimen/space25"
+                    android:text="数据走势"
+                    android:textColor="@color/data_check_text_selector"
+                    android:textSize="@dimen/textfont14" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/data_check_right_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/space25"
+                    android:paddingRight="@dimen/space25"
+                    android:text="历史开奖"
+                    android:textColor="@color/data_check_text_selector"
+                    android:textSize="@dimen/textfont14" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <include layout="@layout/layout_divide_line" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magic_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space30" />
+            <include layout="@layout/layout_divide_line"/>
+
+        <com.icechao.klinelib.view.KLineChartView
+            android:id="@+id/kLineChartView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@color/white"
+            android:nestedScrollingEnabled="false"
+            app:background="@color/white"
+            app:backgroundAlpha="0"
+            app:backgroundFillTopLolor="#ffffff"
+            app:betterSelectedXLabel="true"
+            app:chartTextSize="@dimen/textfont10"
+            app:decreaseColor="@color/color_c25466"
+            app:dotRightPriceBoxBackGroundAlpha="50"
+            app:gridLineColor="@color/color_dddddd"
+            app:gridLineWidth="0.3dp"
+            app:increaseColor="@color/color_4daa90"
+            app:limitTextSize="@dimen/textfont10"
+            app:ma1Color="@color/color_f2dc9c"
+            app:ma2Color="@color/color_4daa90"
+            app:ma3Color="@color/color_c297f7"
+            app:priceLineRightTextColor="@color/color_666666"
+            app:selectInfoBoxBackgroundColor="@color/bg_trans"
+            app:selectInfoBoxBorderColor="@color/color_7287a5"
+            app:selectInfoBoxTextColor="@color/text_white"
+            app:selectLabelBoderColor="@color/color_666666"
+            app:selectTextSize="@dimen/textfont11"
+            app:selectXLineColor="@color/color_666666"
+            app:selectXLineWidth="0.3dp"
+            app:selectYColor="@color/text_gray_drak"
+            app:textColor="@color/color_7287a5"
+            app:timeLineColor="@color/white"
+            app:volLengendColor="@color/color_7287a5"
+            app:candleWidth="@dimen/space9"
+            app:itemWidth="@dimen/space10"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bg_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/space15"
+                android:paddingTop="@dimen/space10"
+                android:paddingRight="@dimen/space15"
+                android:paddingBottom="@dimen/space10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space5"
+                    android:text="实时数据"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/textfont14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(最近30条)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/textfont12" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_filter_data"
+                    android:drawableLeft="@drawable/ic_filter"
+                    android:drawablePadding="@dimen/space5"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/space8"
+                    android:paddingTop="@dimen/space5"
+                    android:paddingRight="@dimen/space8"
+                    android:paddingBottom="@dimen/space5"
+                    android:text="全部"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textfont12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space5"
+                android:paddingBottom="@dimen/space5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="时间"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/textfont12" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="类型"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/textfont12" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="下注"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/textfont12" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="数量"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/textfont12" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_divide_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_deal_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

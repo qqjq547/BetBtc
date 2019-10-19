@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3a82ce</color>
+    <color name="colorPrimaryDark">#5286d0</color>
+    <color name="colorAccent">#3a82ce</color>
+
+    <color name="white">#ffffff</color>
+    <color name="text_black">#333333</color>
+    <color name="text_drak_black">#000000</color>
+    <color name="text_white">#ffffff</color>
+    <color name="text_theme">#dd2828</color>
+    <color name="text_gray_drak">#666666</color>
+    <color name="text_gray">#999999</color>
+    <color name="text_white_hint">#90ffffff</color>
+    <color name="text_summary">#dbdbdb</color>
+    <color name="text_red">#ff3b3b</color>
+    <color name="text_hint">#bebebe</color>
+    <color name="text_orange">#fdba06</color>
+    <color name="text_home_indicate">#f85b28</color>
+    <color name="text_green_light">#05ceb0</color>
+    <color name="text_share">#6f73df</color>
+
+    <color name="text_info_tab_select">#ff3f3f</color>
+    <color name="text_blue">#002a64</color>
+    <color name="text_notice">#ec6b55</color>
+    <color name="text_time">#353535</color>
+    <color name="text_yellow">#ff7519</color>
+    <color name="text_share_btn">#8015cf</color>
+    <color name="bg_sky_blue">#3097d2</color>
+
+    <color name="bg_theme">#f5f5f5</color>
+    <color name="bg_gray">#eeeeee</color>
+    <color name="bg_gray_drak">#999999</color>
+    <color name="bg_gray_light">#f9f9f9</color>
+    <color name="bg_white">#ffffff</color>
+    <color name="bg_black">#000000</color>
+    <color name="bg_trans">#75000000</color>
+    <color name="bg_trans_light">#30000000</color>
+    <color name="bg_title">#ffffff</color>
+    <color name="bg_tag">#cce03c47</color>
+    <color name="bg_divide">#dbdbdb</color>
+    <color name="bg_follow">#ff344b</color>
+    <color name="bg_msg_dot">#ff344b</color>
+    <color name="bg_speed_select">#cc000000</color>
+    <color name="bg_edit_panel">#242730</color>
+    <color name="bg_playing">#05ceb0</color>
+    <color name="bg_reply">#f3f3f3</color>
+    <color name="bg_frame_color">#999999</color>
+    <color name="bg_btn_login_phone">#ff3b3b</color>
+    <color name="bg_line_login">#e5e5e5</color>
+    <color name="bg_edit_redbag">#eeeeee</color>
+    <color name="bg_yellow">#ffc618</color>
+    <color name="bg_text_yellow_bag">#ffc618</color>
+    <color name="bg_red">#ff3b3b</color>
+    <color name="bg_center_yellow">#ffc65f</color>
+    <color name="bg_center_green">#23d6c3</color>
+    <color name="bg_center_purple">#aea9ff</color>
+    <color name="bg_green">#96c160</color>
+    <color name="bg_city_bid_hall_right_gray">#bfbdbd</color>
+    <color name="bg_rain">#e84047</color>
+    <color name="bg_active">#86e0de</color>
+    <color name="bg_trans_white">#e6ffffff</color>
+
+
+    <color name="color_c7cfd4">#c7cfd4</color>
+    <color name="color_3a82ce">#3a82ce</color>
+
+    <color name="color_111925">#111925</color>
+    <color name="color_c25466">#c25466</color>
+    <color name="color_4daa90">#4daa90</color>
+    <color name="color_7287a5">#7287a5</color>
+    <color name="color_5286d0">#5286d0</color>
+    <color name="color_1e293a">#1e293a</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_f2dc9c">#f2dc9c</color>
+    <color name="color_c297f7">#c297f7</color>
+
+
+
+
+
+
+
+
+
+
+
+</resources>
