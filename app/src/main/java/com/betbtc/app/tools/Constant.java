@@ -25,4 +25,7 @@ public class Constant {
             "clear","0","del","max",
     };
 
+    public static final int REQUEST_PICK_PICTURE = 0x11 ;
+    public static final String NICKNAME = "nickname";
+    public static final String FORMAT_DATE = "yyyy-MM-dd";
 }

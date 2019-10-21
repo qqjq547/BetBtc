@@ -36,7 +36,7 @@
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">@dimen/textfont15</item>
     </style>
-    <style name="Custom_Progress" parent="@android:style/Theme.Dialog">
+    <style name="dialog_progress" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>

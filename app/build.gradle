@@ -83,6 +83,9 @@ dependencies {
     implementation 'com.icechao.klinelib:klinelib:1.0.4'
     implementation 'com.allenliu.versionchecklib:library:2.1.5'
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
+    implementation 'com.github.donkingliang:ImageSelector:2.0.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

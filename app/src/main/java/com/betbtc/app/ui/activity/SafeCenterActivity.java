@@ -2,6 +2,7 @@ package com.betbtc.app.ui.activity;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.betbtc.app.R;
@@ -11,23 +12,18 @@ import com.betbtc.app.base.MvpActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class RechargeActivity extends MvpActivity {
+public class SafeCenterActivity extends MvpActivity {
+
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.tv_coin_type)
-    TextView tvCoinType;
-    @BindView(R.id.iv_qrcode)
-    ImageView ivQrcode;
-    @BindView(R.id.tv_coin_address)
-    TextView tvCoinAddress;
-    @BindView(R.id.tv_share)
-    TextView tvShare;
-    @BindView(R.id.tv_copy)
-    TextView tvCopy;
-    @BindView(R.id.tv_summary)
-    TextView tvSummary;
+    @BindView(R.id.lin_change_login_pwd)
+    LinearLayout linChangeLoginPwd;
+    @BindView(R.id.lin_change_trade_pwd)
+    LinearLayout linChangeTradePwd;
+    @BindView(R.id.lin_bind_email)
+    LinearLayout linBindEmail;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -36,25 +32,25 @@ public class RechargeActivity extends MvpActivity {
 
     @Override
     public int getLayout() {
-        return R.layout.activity_recharge;
+        return R.layout.activity_safe_center;
     }
 
     @Override
     public void initViewAndData() {
-         tvTitle.setText(R.string.recharge);
-    }
+        tvTitle.setText(R.string.safe_center);
 
-    @OnClick({R.id.iv_back, R.id.tv_coin_type, R.id.tv_share, R.id.tv_copy})
+    }
+    @OnClick({R.id.iv_back, R.id.lin_change_login_pwd, R.id.lin_change_trade_pwd, R.id.lin_bind_email})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 onBackPressed();
                 break;
-            case R.id.tv_coin_type:
+            case R.id.lin_change_login_pwd:
                 break;
-            case R.id.tv_share:
+            case R.id.lin_change_trade_pwd:
                 break;
-            case R.id.tv_copy:
+            case R.id.lin_bind_email:
                 break;
         }
     }

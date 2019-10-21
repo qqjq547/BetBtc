@@ -2,131 +2,61 @@ package com.betbtc.app.tools;
 
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
+import com.google.gson.GsonBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.io.Reader;
+import java.lang.reflect.Type;
 
 
 
 public class GsonUtil {
 
+    private static final Gson Gson = createGson(true);
 
-private static Gson gson = null;
-    static {
-        if (gson == null) {
-            gson = new Gson();
-        }
-    }
-
+    private static final Gson Gson_No_Nulls = createGson(false);
 
     private GsonUtil() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
-
-    /**
-     * 将object对象转成json字符串
-     * 
-     * @param object
-     * @return
-     */
-    public static String GsonString(Object object) {
-        String gsonString = null;
-        if (gson != null) {
-            gsonString = gson.toJson(object);
-        }
-        return gsonString;
+    public static Gson getGson() {
+        return getGson(true);
     }
 
-
-    /**
-     * 将gsonString转成泛型bean
-     * 
-     * @param gsonString
-     * @param cls
-     * @return
-     */
-    public static <T> T GsonToBean(String gsonString, Class<T> cls) {
-        T t = null;
-        if (gson != null) {
-            t = gson.fromJson(gsonString, cls);
-        }
-        return t;
+    public static Gson getGson(final boolean serializeNulls) {
+        return serializeNulls ? Gson_No_Nulls : Gson;
+    }
+    public static String toJson(final Object object) {
+        return toJson(object, true);
     }
 
-
-   /**
-     * 转成list
-     * 泛型在编译期类型被擦除导致报错
-     * @param gsonString
-     * @param cls
-     * @return
-     */
-    public static <T> List<T> GsonToList(String gsonString, Class<T> cls) {
-        List<T> list = null;
-        if (gson != null) {
-            list = gson.fromJson(gsonString, new TypeToken<List<T>>() {
-            }.getType());
-        }
-        return list;
+    public static String toJson(final Object object, final boolean includeNulls) {
+        return includeNulls ? Gson.toJson(object) : Gson_No_Nulls.toJson(object);
+    }
+    public static <T> T fromJson(final String json, final Class<T> type) {
+        return Gson.fromJson(json, type);
     }
 
-
-    /**
-     * 转成list
-     * 解决泛型问题
-     * @param json
-     * @param cls
-     * @param <T>
-     * @return
-     */
-    public static <T> List<T> jsonToList(String json, Class<T> cls) {
-        Gson gson = new Gson();
-        List<T> list = new ArrayList<T>();
-        JsonArray array = new JsonParser().parse(json).getAsJsonArray();
-        for(final JsonElement elem : array){
-            list.add(gson.fromJson(elem, cls));
-        }
-        return list;
+    public static <T> T fromJson(final String json, final Type type) {
+        return Gson.fromJson(json, type);
+    }
+    public static <T> T fromJson(final Reader reader, final Class<T> type) {
+        return Gson.fromJson(reader, type);
+    }
+    public static <T> T fromJson(final Reader reader, final Type type) {
+        return Gson.fromJson(reader, type);
+    }
+    private static Gson createGson(final boolean serializeNulls) {
+        final GsonBuilder builder = new GsonBuilder();
+        if (serializeNulls) builder.serializeNulls();
+        return builder.create();
     }
 
-
-
-
-    /**
-     * 转成list中有map的
-     * 
-     * @param gsonString
-     * @return
-     */
-    public static <T> List<Map<String, T>> GsonToListMaps(String gsonString) {
-        List<Map<String, T>> list = null;
-        if (gson != null) {
-            list = gson.fromJson(gsonString,
-                    new TypeToken<List<Map<String, T>>>() {
-                    }.getType());
-        }
-        return list;
+    public static <T> T copy(final T Object, final Class<T> type) {
+        return Gson.fromJson(Gson.toJson(Object), type);
     }
 
-
-    /**
-     * 转成map的
-     * 
-     * @param gsonString
-     * @return
-     */
-    public static <T> Map<String, T> GsonToMaps(String gsonString) {
-        Map<String, T> map = null;
-        if (gson != null) {
-            map = gson.fromJson(gsonString, new TypeToken<Map<String, T>>() {
-            }.getType());
-        }
-        return map;
+    public static <T> T copy(final T Object, final Type type) {
+        return Gson.fromJson(Gson.toJson(Object), type);
     }
-
 }

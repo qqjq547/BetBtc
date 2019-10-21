@@ -1,7 +1,6 @@
 package com.betbtc.app.ui.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,6 @@ import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.ui.activity.common.MyCaptureActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class WithDrawActivity extends MvpActivity {

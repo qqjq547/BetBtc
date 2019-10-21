@@ -5,19 +5,16 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.betbtc.app.R;
 import com.betbtc.app.tools.CommonUtil;
-import com.betbtc.app.tools.LogUtil;
 
 public class CircleProgress extends View {
     private Paint titlePaint;

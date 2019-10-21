@@ -1,9 +1,8 @@
 package com.betbtc.app.ui.activity;
 
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +14,7 @@ import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.model.CoinDetail;
+import com.betbtc.app.tools.CoinDetailsTypePop;
 import com.betbtc.app.ui.adapter.CoinDetailAdapter;
 import com.betbtc.app.view.VerticalDecoration;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -26,10 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CoinDetailActivity extends MvpActivity {
+    @BindView(R.id.lin_title)
+    LinearLayout linTitle;
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -43,6 +44,8 @@ public class CoinDetailActivity extends MvpActivity {
 
     List<CoinDetail> coinDetails=new ArrayList<>();
     CoinDetailAdapter coinDetailAdapter;
+    CoinDetailsTypePop coinDetailsTypePop;
+    List<String> subjectName=new ArrayList<>();
 
     @Override
     protected BasePresenter createPresenter() {
@@ -58,15 +61,19 @@ public class CoinDetailActivity extends MvpActivity {
     public void initViewAndData() {
       tvTitle.setText(R.string.balance_detail);
       tvText.setText(R.string.all);
+        subjectName.add("全部");
+        subjectName.add("充值");
+        subjectName.add("提币");
+        subjectName.add("下注");
+        subjectName.add("奖金");
+        subjectName.add("平台奖励");
+
         if (coinDetailAdapter != null) {
             return;
         }
-        coinDetails.add(new CoinDetail());
-        coinDetails.add(new CoinDetail());
-        coinDetails.add(new CoinDetail());
-        coinDetails.add(new CoinDetail());
-        coinDetails.add(new CoinDetail());
-        coinDetails.add(new CoinDetail());
+        for (int i = 0; i < 20; i++) {
+            coinDetails.add(new CoinDetail());
+        }
         coinDetailAdapter = new CoinDetailAdapter(coinDetails);
         coinDetailAdapter.setEmptyView(getLayoutInflater().inflate(R.layout.layout_empty, null));
         coinDetailAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
@@ -105,6 +112,28 @@ public class CoinDetailActivity extends MvpActivity {
                 onBackPressed();
                 break;
             case R.id.tv_text:
+                if (coinDetailsTypePop == null) {
+                    coinDetailsTypePop = new CoinDetailsTypePop(this,subjectName, new CoinDetailsTypePop.OnSelectItemListener() {
+                        @Override
+                        public void onSelectItem(int position) {
+                            tvText.setText(subjectName.get(position));
+//                            String selectType=subjectArr.get(position).getCode();
+//                            if (!TextUtils.equals(selectType,type)){
+//                                tvText.setText(subjectName.get(position));
+//                                type=selectType;
+//                                itemArr.clear();
+//                                mySealDetailsAdapter.notifyDataSetChanged();
+//                                startIndex=defaultIndex;
+//                                mvpPresenter.getCoinRecord(type,coinType,startIndex,Constant.PAGE_SIZE);
+//                            }
+                        }
+                    });
+                }
+                if (coinDetailsTypePop.isShowing()) {
+                    coinDetailsTypePop.dismiss();
+                } else {
+                    coinDetailsTypePop.showAsDropDown(linTitle);
+                }
                 break;
         }
     }

@@ -7,6 +7,7 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 
 import com.betbtc.app.tools.AppManager;
+import com.betbtc.app.tools.PrefUtil;
 import com.hjq.toast.ToastUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
@@ -49,6 +50,7 @@ public class App extends Application {
         super.onCreate();
         AppManager.init(this);
         ToastUtils.init(this);
+        PrefUtil.init(this);
     }
 
 

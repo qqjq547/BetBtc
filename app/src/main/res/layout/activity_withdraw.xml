@@ -58,7 +58,7 @@
                         android:src="@drawable/ic_scan" />
                 </LinearLayout>
 
-                <view
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_h_5"
                     android:background="@color/bg_divide" />
@@ -113,7 +113,7 @@
                         android:text="@string/all"/>
                 </LinearLayout>
 
-                <view
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divide_h_5"
                     android:background="@color/bg_divide" />
@@ -148,7 +148,7 @@
 
             <Button
                 android:id="@+id/btn_withdraw"
-                style="?android:attr/borderlessButtonStyle"
+                style="@style/ViewClickStyle"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space45"
                 android:layout_marginTop="@dimen/space30"

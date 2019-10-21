@@ -18,7 +18,7 @@
             android:lines="1"
             android:ellipsize="end"
             android:textColor="@color/text_drak_black"
-            android:textSize="@dimen/textfont14"
+            android:textSize="@dimen/textfont15"
             android:text="提币"/>
 
         <TextView
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space5"
-            android:textSize="@dimen/textfont12"
+            android:textSize="@dimen/textfont13"
             android:textColor="@color/text_red"
             android:text="处理中"/>
 
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_gray"
-            android:textSize="@dimen/textfont12"
+            android:textSize="@dimen/textfont13"
             android:text="19-13 15:21"/>
         <Space
             android:layout_width="0dp"

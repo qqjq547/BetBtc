@@ -7,11 +7,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/space200"
-        android:background="@color/colorPrimary"
-        android:gravity="center">
+        android:background="@drawable/bg_user_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="@dimen/space30"
+                android:layout_height="@dimen/space30"
+                android:layout_margin="@dimen/space15"
+                android:src="@drawable/ic_setting" />
+        </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center_vertical">
 
             <ImageView
@@ -62,6 +79,11 @@
                 android:drawablePadding="@dimen/space5"
                 android:text="@string/share"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

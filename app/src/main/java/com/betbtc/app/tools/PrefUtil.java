@@ -4,6 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import androidx.annotation.NonNull;
+
+import com.betbtc.app.model.UserInfo;
+
+import java.lang.reflect.Type;
+
 
 public class PrefUtil {
     public static final String USER_ROLE = "user_role";
@@ -13,20 +19,8 @@ public class PrefUtil {
     public static final String LATITUDE = "latitude";
     public static final String LONGITUDE = "longitude";
     public static final String USER_TOKEN = "userToken";
-    public static final String COIN = "coin";
-    public static final String MONEY = "money";
-    // 未认证：0 已认证：1 审核中：2
-    public static final String IDENTITY = "identify";
-    // 未设置：0 已设置：1
-    public static final String SAFECODE = "safeCode";
-    public static final String FIRSTOPEN = "firstOpen";
-    public static final String MSGISNEW = "msgIsNew";
-    public static final String KILOMETRE = "kilometre";
-    public static final String DEBUGHOST = "debugHost";
-    public static final String SOUNDSWITCH = "sound_switch";
-    // 广告相关信息存储
-    public static final String ADVER_MESSAGE = "adverMessage";
-    public static final String UPGRADE_NOTICE = "upgrade_notice";
+    public static final String USER_INFO = "userToken";
+
 
     public static void init(Context context) {
         preference = new PrefUtil(context);
@@ -113,6 +107,38 @@ public class PrefUtil {
     public String getUserToken() {
         return getString(USER_TOKEN, "");
     }
+    public UserInfo getUserInfo() {
+        return getEntity(USER_INFO, UserInfo.class);
+    }
+
+    public void put(@NonNull final String key, final Object javaBean) {
+        put(key, javaBean, false);
+    }
+
+    public void put(@NonNull final String key, final Object javaBean, boolean isCommit) {
+        Editor edit = sharedPreference.edit();
+        if (isCommit) {
+            edit.putString(key, GsonUtil.toJson(javaBean)).commit();
+        } else {
+            edit.putString(key, GsonUtil.toJson(javaBean)).apply();
+        }
+    }
+    public <T extends Object> T getEntity(@NonNull final String key, final Class<T> tClass) {
+        String value = getString(key, "");
+        return GsonUtil.fromJson(value, tClass);
+    }
+
+    public <T extends Object> T getEntity(@NonNull final String key, final Class<T> tClass, final String defaultValue) {
+        String value = getString(key, defaultValue);
+        return GsonUtil.fromJson(value, tClass);
+    }
+
+    public <T extends Object> T getEntity(@NonNull final String key, Type typeOfT) {
+        String value = getString(key, "");
+        return GsonUtil.fromJson(value, typeOfT);
+    }
+
+
 
 
 }

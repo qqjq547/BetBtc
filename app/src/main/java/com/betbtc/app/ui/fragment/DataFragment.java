@@ -141,7 +141,7 @@ public class DataFragment extends MvpFragment {
                 LogUtil.d(json);
 //                EventBus.getDefault().post(new KLineEvent());
                 if (!TextUtils.isEmpty(json)) {
-                    SocketMsg msg = GsonUtil.GsonToBean(json, SocketMsg.class);
+                    SocketMsg msg = GsonUtil.fromJson(json, SocketMsg.class);
                     KLine kLine = msg.getTick();
                     if (adapter.getCount() > 0) {
                         if (kLine.getId() == (klines.get(adapter.getCount() - 1).getId())) {

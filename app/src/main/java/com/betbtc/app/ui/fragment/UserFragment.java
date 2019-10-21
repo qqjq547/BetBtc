@@ -16,7 +16,10 @@ import com.betbtc.app.tools.ColorUtils;
 import com.betbtc.app.tools.glide.CircleTransformation;
 import com.betbtc.app.tools.glide.GlideApp;
 import com.betbtc.app.ui.activity.CoinDetailActivity;
+import com.betbtc.app.ui.activity.PersonInfoActivity;
 import com.betbtc.app.ui.activity.RechargeActivity;
+import com.betbtc.app.ui.activity.SafeCenterActivity;
+import com.betbtc.app.ui.activity.SettingActivity;
 import com.betbtc.app.ui.activity.WithDrawActivity;
 import com.betbtc.app.ui.adapter.UserMenuAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -29,6 +32,9 @@ import butterknife.OnClick;
 
 public class UserFragment extends MvpFragment {
 
+
+    @BindView(R.id.iv_setting)
+    ImageView ivSetting;
     @BindView(R.id.iv_avatar)
     ImageView ivAvatar;
     @BindView(R.id.tv_name)
@@ -89,6 +95,9 @@ public class UserFragment extends MvpFragment {
                     case 1:
                         startActivity(new Intent(getActivity(), CoinDetailActivity.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(getActivity(), SafeCenterActivity.class));
+                        break;
 
                 }
             }
@@ -97,10 +106,14 @@ public class UserFragment extends MvpFragment {
 
     }
 
-    @OnClick({R.id.iv_avatar, R.id.tv_share, R.id.tv_balance, R.id.iv_tip, R.id.tv_recharge, R.id.tv_withdraw, R.id.iv_banner})
+    @OnClick({R.id.iv_setting,R.id.iv_avatar, R.id.tv_share, R.id.tv_balance, R.id.iv_tip, R.id.tv_recharge, R.id.tv_withdraw, R.id.iv_banner})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.iv_setting:
+                startActivity(new Intent(getActivity(), SettingActivity.class));
+                break;
             case R.id.iv_avatar:
+                startActivity(new Intent(getActivity(), PersonInfoActivity.class));
                 break;
             case R.id.tv_share:
                 break;

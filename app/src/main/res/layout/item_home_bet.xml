@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingLeft="@dimen/space20"
     android:paddingTop="@dimen/space12"
@@ -27,16 +27,32 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
-
-            <com.betbtc.app.view.CircleProgress
+            <com.betbtc.app.view.WaveLoadingView
                 android:layout_width="@dimen/space60"
                 android:layout_height="@dimen/space60"
-                custom:circle_progress="50"
-                custom:circle_text_size="@dimen/textfont13"
-                custom:circle_text_color="@color/text_white"
-                custom:circle_finished_color="@color/color_4daa90"
-                custom:circle_prefix_text="x"
-                custom:circle_title="@string/rise"/>
+                app:wlv_borderColor="@color/color_4daa90"
+                app:wlv_borderWidth="@dimen/space2"
+                app:wlv_progressValue="40"
+                app:wlv_round_rectangle="true"
+                app:wlv_shapeType="circle"
+                app:wlv_titleCenter="涨"
+                app:wlv_titleCenterColor="@color/text_black"
+                app:wlv_titleCenterSize="@dimen/textfont16"
+                app:wlv_titleBottom="x1.24"
+                app:wlv_titleBottomSize="@dimen/textfont11"
+                app:wlv_titleBottomColor="@color/text_white"
+                app:wlv_triangle_direction="north"
+                app:wlv_waveAmplitude="30"
+                app:wlv_waveColor="@color/color_4daa90"/>
+<!--            <com.betbtc.app.view.CircleProgress-->
+<!--                android:layout_width="@dimen/space60"-->
+<!--                android:layout_height="@dimen/space60"-->
+<!--                app:circle_progress="50"-->
+<!--                app:circle_text_size="@dimen/textfont13"-->
+<!--                app:circle_text_color="@color/text_white"-->
+<!--                app:circle_finished_color="@color/color_4daa90"-->
+<!--                app:circle_prefix_text="x"-->
+<!--                app:circle_title="@string/rise"/>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,16 +84,32 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
-
-            <com.betbtc.app.view.CircleProgress
+            <com.betbtc.app.view.WaveLoadingView
                 android:layout_width="@dimen/space60"
                 android:layout_height="@dimen/space60"
-                custom:circle_progress="50"
-                custom:circle_text_size="@dimen/textfont13"
-                custom:circle_text_color="@color/text_white"
-                custom:circle_finished_color="@color/color_c25466"
-                custom:circle_prefix_text="x"
-                custom:circle_title="@string/fall"/>
+                app:wlv_borderColor="@color/color_c25466"
+                app:wlv_borderWidth="@dimen/space2"
+                app:wlv_progressValue="60"
+                app:wlv_round_rectangle="true"
+                app:wlv_shapeType="circle"
+                app:wlv_titleCenter="@string/fall"
+                app:wlv_titleCenterColor="@color/text_black"
+                app:wlv_titleCenterSize="@dimen/textfont16"
+                app:wlv_titleBottom="x1.24"
+                app:wlv_titleBottomSize="@dimen/textfont11"
+                app:wlv_titleBottomColor="@color/text_white"
+                app:wlv_triangle_direction="north"
+                app:wlv_waveAmplitude="30"
+                app:wlv_waveColor="@color/color_c25466"/>
+<!--            <com.betbtc.app.view.CircleProgress-->
+<!--                android:layout_width="@dimen/space60"-->
+<!--                android:layout_height="@dimen/space60"-->
+<!--                app:circle_progress="50"-->
+<!--                app:circle_text_size="@dimen/textfont13"-->
+<!--                app:circle_text_color="@color/text_white"-->
+<!--                app:circle_finished_color="@color/color_c25466"-->
+<!--                app:circle_prefix_text="x"-->
+<!--                app:circle_title="@string/fall"/>-->
 
             <LinearLayout
                 android:layout_width="match_parent"

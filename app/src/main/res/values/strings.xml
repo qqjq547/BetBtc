@@ -64,7 +64,30 @@
     <string name="pls_inside_code">将二维码放入框内即可扫描</string>
     <string name="scan_result">扫码结果</string>
     <string name="empty_notice">空空如也</string>
+    <string name="person_info">个人资料</string>
+    <string name="msg_notify">消息通知</string>
+    <string name="real_name">实名认证</string>
+    <string name="language">语言</string>
+    <string name="balance_color">涨跌色</string>
+    <string name="exit_logput">退出登录</string>
 
+    <string name="avatar">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="gender">性别</string>
+    <string-array name="gender_array">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string name="birthday">生日</string>
+    <string name="un_real_name">未实名</string>
+    <string name="un_setting">未设置</string>
+    <string name="get_pic_permission">请先设置相机和本地图片权限</string>
+    <string name="change_login_pwd">修改登录密码</string>
+    <string name="change_login_pwd_hint">定期修改登录密码，有利于账户安全</string>
+    <string name="change_trade_pwd">修改交易密码</string>
+    <string name="change_trade_pwd_hint">定期修改交易密码，保障资产安全</string>
+    <string name="bind_email">绑定邮箱</string>
+    <string name="bind_email_hint">绑定邮箱，多一层保护验证</string>
 
     <string-array name="data_nav">
         <item>分时</item>
