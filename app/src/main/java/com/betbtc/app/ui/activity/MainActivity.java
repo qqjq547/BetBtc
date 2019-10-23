@@ -25,8 +25,9 @@ import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.tools.AppManager;
+import com.betbtc.app.tools.FragmentUtil;
+import com.betbtc.app.ui.fragment.BetRecordFragment;
 import com.betbtc.app.ui.fragment.DataFragment;
-import com.betbtc.app.ui.fragment.HistoryFragment;
 import com.betbtc.app.ui.fragment.HomeFragment;
 import com.betbtc.app.ui.fragment.UserFragment;
 
@@ -40,8 +41,8 @@ public class MainActivity extends MvpActivity {
     RadioButton rbtnHome;
     @BindView(R.id.rbtn_data)
     RadioButton rbtnData;
-    @BindView(R.id.rbtn_history)
-    RadioButton rbtnHistory;
+    @BindView(R.id.rbtn_betlist)
+    RadioButton rbtnBetlist;
     @BindView(R.id.rbtn_user)
     RadioButton rbtnUser;
     @BindView(R.id.rgroup_main)
@@ -51,7 +52,7 @@ public class MainActivity extends MvpActivity {
 //    BadgeView badgeView;
     long mExitTime;
     Toast toast;
-    int currentId = -1;
+    FragmentUtil fragmentUtil;
     Fragment[] fragments = new Fragment[5];
     MainReceiver mainReceiver;
     @Override
@@ -70,23 +71,24 @@ public class MainActivity extends MvpActivity {
 //        setStatusbar(R.color.colorPrimary,false);
         fragments[0] = new HomeFragment();
         fragments[1] = new DataFragment();
-        fragments[2] = new HistoryFragment();
+        fragments[2] = new BetRecordFragment();
         fragments[3] = new UserFragment();
+        fragmentUtil=new FragmentUtil(getSupportFragmentManager(),R.id.content,fragments);
         rgroupMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 switch (checkedId) {
                     case R.id.rbtn_home:
-                        selectTab(0);
+                        fragmentUtil.showFragment(0);
                         break;
                     case R.id.rbtn_data:
-                        selectTab(1);
+                        fragmentUtil.showFragment(1);
                         break;
-                    case R.id.rbtn_history:
-                        selectTab(2);
+                    case R.id.rbtn_betlist:
+                        fragmentUtil.showFragment(2);
                         break;
                     case R.id.rbtn_user:
-                        selectTab(3);
+                        fragmentUtil.showFragment(3);
                         break;
                 }
             }
@@ -122,30 +124,7 @@ public class MainActivity extends MvpActivity {
             System.exit(0);
         }
     }
-    public void selectTab(int index) {
-        if (currentId == index) {
-            return;
-        }
-        if (currentId >= 0) {
-            switchContent(fragments[currentId], fragments[index]);
-        } else {
-            switchContent(null, fragments[index]);
-        }
-        currentId = index;
-    }
 
-    public void switchContent(Fragment from, Fragment to) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if (from == null) {
-            transaction.add(R.id.content, to).commit();
-        } else if (from != to) {
-            if (!to.isAdded()) {
-                transaction.hide(from).add(R.id.content, to).commit();
-            } else {
-                transaction.hide(from).show(to).commit();
-            }
-        }
-    }
 
     @SuppressLint("MissingSuperCall")
     @Override

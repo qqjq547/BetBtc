@@ -29,7 +29,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:textSize="@dimen/textfont13"
-        android:textColor="@color/color_4daa90"
+        android:textColor="@color/rise"
         android:textStyle="bold"
         android:text="涨"/>
     <TextView

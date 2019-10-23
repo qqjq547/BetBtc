@@ -21,7 +21,7 @@ public class Constant {
     public static final String[] DIAL_DATA=new String[]{
             "1","2","3","+10",
             "4","5","6","+50",
-            "7","8","9","+100",
+            "7","8","9","+200",
             "clear","0","del","max",
     };
 

@@ -111,7 +111,7 @@ public class HomeMyBetAdapter extends BaseQuickAdapter<HomeMyBet,BaseViewHolder>
                 case "+100":
                     if (curText.length()>0){
                         int num=Integer.parseInt(curText);
-                        result=String.valueOf(num+100);
+                        result=String.valueOf(num+200);
                     }else {
                         result="100";
                     }

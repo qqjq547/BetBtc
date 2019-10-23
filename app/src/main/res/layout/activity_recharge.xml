@@ -80,7 +80,7 @@
                     android:layout_height="@dimen/space45"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/color_c25466"
+                    android:textColor="@color/fall"
                     android:textSize="@dimen/textfont14"
                     android:textStyle="bold"
                     android:text="@string/share"/>
@@ -95,7 +95,7 @@
                     android:layout_height="@dimen/space45"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/color_4daa90"
+                    android:textColor="@color/rise"
                     android:textSize="@dimen/textfont14"
                     android:textStyle="bold"
                     android:text="@string/copy"/>

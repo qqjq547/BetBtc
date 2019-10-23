@@ -72,19 +72,12 @@ public class HomeFragment extends MvpFragment {
         rvBet.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         rvBet.addItemDecoration(new VerticalDecoration(getContext()));
         rvBet.setItemAnimator(new DefaultItemAnimator());
-        homeBets.add(new HomeBet("猜收盘价"));
-        homeBets.add(new HomeBet("猜最高价"));
-        homeBets.add(new HomeBet("猜最低价"));
-        homeBets.add(new HomeBet("猜差价"));
-        homeBets.add(new HomeBet("猜平均成交价"));
+        String[] titles= getResources().getStringArray(R.array.bet_type);
+        for (int i = 0; i < titles.length; i++) {
+            homeBets.add(new HomeBet(titles[i]));
+        }
         homeBetAdapter = new HomeBetAdapter(homeBets);
         rvBet.setAdapter(homeBetAdapter);
-        appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                appBarLayout.setBackgroundColor(changeAlpha(getResources().getColor(R.color.colorPrimary), Math.abs(verticalOffset * 1.0f) / appBarLayout.getTotalScrollRange()));
-            }
-        });
     }
 
     /**

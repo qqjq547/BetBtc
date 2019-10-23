@@ -1,5 +1,7 @@
 package com.betbtc.app.ui.fragment;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -9,9 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpFragment;
+import com.betbtc.app.model.History;
+import com.betbtc.app.model.HistoryItem;
 import com.betbtc.app.mvp.model.BetItem;
 import com.betbtc.app.mvp.model.BetRecord;
+import com.betbtc.app.tools.CommonUtil;
+import com.betbtc.app.ui.activity.LotteryDetailActivity;
 import com.betbtc.app.ui.adapter.BetRecordAdapter;
+import com.betbtc.app.ui.adapter.HistoryAdapter;
+import com.betbtc.app.view.VerticalDecoration;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
@@ -21,15 +30,13 @@ import butterknife.BindView;
 
 public class HistoryFragment extends MvpFragment {
 
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.rv_history)
     RecyclerView rvHistory;
     @BindView(R.id.srl_refresh)
     SmartRefreshLayout srlRefresh;
 
-    List<BetRecord> betRecords=new ArrayList<>();
-    BetRecordAdapter betRecordAdapter;
+    List<History> historyList=new ArrayList<>();
+    HistoryAdapter historyAdapter;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -42,35 +49,29 @@ public class HistoryFragment extends MvpFragment {
     }
 
     @Override
-    public void initViewAndData() { tvTitle.setText("注单");
-       rvHistory.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-       rvHistory.setItemAnimator(new DefaultItemAnimator());
-       BetRecord betRecord1=new BetRecord();
-       List<BetItem> item1=new ArrayList<>();
-        item1.add(new BetItem());
-        item1.add(new BetItem());
-        betRecord1.setList(item1);
-        betRecords.add(betRecord1);
-
-        BetRecord betRecord2=new BetRecord();
-        List<BetItem> item2=new ArrayList<>();
-        item2.add(new BetItem());
-        item2.add(new BetItem());
-        item2.add(new BetItem());
-        betRecord2.setList(item2);
-        betRecords.add(betRecord2);
-
-        BetRecord betRecord3=new BetRecord();
-        List<BetItem> item3=new ArrayList<>();
-        item3.add(new BetItem());
-        item3.add(new BetItem());
-        item3.add(new BetItem());
-        item3.add(new BetItem());
-        betRecord3.setList(item3);
-        betRecords.add(betRecord3);
-
-        betRecordAdapter=new BetRecordAdapter(betRecords);
-        rvHistory.setAdapter(betRecordAdapter);
+    public void initViewAndData() {
+        rvHistory.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+        rvHistory.addItemDecoration(new VerticalDecoration(getContext()));
+        rvHistory.setItemAnimator(new DefaultItemAnimator());
+        for (int i = 0; i < 4; i++) {
+            History history=new History();
+            List<HistoryItem> list=new ArrayList<>();
+            list.add(new HistoryItem());
+            list.add(new HistoryItem());
+            list.add(new HistoryItem());
+            list.add(new HistoryItem());
+            list.add(new HistoryItem());
+            history.setList(list);
+            historyList.add(history);
+        }
+        historyAdapter=new HistoryAdapter(historyList);
+        historyAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(), LotteryDetailActivity.class));
+            }
+        });
+        rvHistory.setAdapter(historyAdapter);
 
     }
 }

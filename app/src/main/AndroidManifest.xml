@@ -51,6 +51,7 @@
         <activity android:name=".ui.activity.SetNickNameActivity"/>
         <activity android:name=".ui.activity.MsgNotifyActivity"/>
         <activity android:name=".ui.activity.SafeCenterActivity"/>
+        <activity android:name=".ui.activity.LotteryDetailActivity"/>
 
         //图片选择Activity
         <activity android:name="com.donkingliang.imageselector.ImageSelectorActivity"

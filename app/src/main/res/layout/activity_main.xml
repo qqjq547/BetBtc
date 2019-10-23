@@ -36,10 +36,10 @@
                     android:drawableTop="@drawable/tab_data_selector"
                     android:text="@string/tab_data"/>
                 <RadioButton
-                    android:id="@+id/rbtn_history"
+                    android:id="@+id/rbtn_betlist"
                     style="@style/rdbtn_nav"
-                    android:drawableTop="@drawable/tab_history_selector"
-                    android:text="@string/tab_history"/>
+                    android:drawableTop="@drawable/tab_betlist_selector"
+                    android:text="@string/tab_bet_list"/>
                 <RadioButton
                     android:id="@+id/rbtn_user"
                     style="@style/rdbtn_nav"

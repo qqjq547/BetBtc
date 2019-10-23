@@ -35,7 +35,7 @@
                     android:id="@+id/tv_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color_4daa90"
+                    android:textColor="@color/rise"
                     android:textSize="@dimen/textfont16"
                     android:textStyle="bold"
                     android:text="涨"/>

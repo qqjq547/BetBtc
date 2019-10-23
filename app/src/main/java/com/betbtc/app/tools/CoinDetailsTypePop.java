@@ -43,7 +43,7 @@ public class CoinDetailsTypePop extends PopupWindow {
         setContentView(view);
         ButterKnife.bind(this, view);
         rv.setLayoutManager(new GridLayoutManager(activity, 3));
-        rv.addItemDecoration(new GridItemDecoration(3,5,true));
+        rv.addItemDecoration(new GridItemDecoration(3,CommonUtil.dp2px(activity,15),true));
         coinDetailsTypeAdapter = new CoinDetailsTypeAdapter(ksbTypes);
         coinDetailsTypeAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         coinDetailsTypeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {

@@ -4,7 +4,7 @@
 
     <string name="tab_home">首页</string>
     <string name="tab_data">数据</string>
-    <string name="tab_history">历史</string>
+    <string name="tab_bet_list">注单</string>
     <string name="tab_user">我的</string>
     <string name="network_error_and_late">网络异常，请稍后再试</string>
     <string name="parse_error_and_late">解析错误，请稍后再试</string>
@@ -30,6 +30,10 @@
     <string name="ensure_delete_this_bet">确定删除该注单</string>
     <string name="rise">涨</string>
     <string name="fall">跌</string>
+    <string name="data_trend">数据走势</string>
+    <string name="history_result">历史开奖</string>
+    <string name="lottery_detail">开奖详情</string>
+
 
 
     <string name="share">分享</string>
@@ -89,6 +93,13 @@
     <string name="bind_email">绑定邮箱</string>
     <string name="bind_email_hint">绑定邮箱，多一层保护验证</string>
 
+    <string-array name="bet_type">
+        <item>猜收盘价</item>
+        <item>猜最高价</item>
+        <item>猜最低价</item>
+        <item>猜差价</item>
+        <item>猜成交价</item>
+    </string-array>
     <string-array name="data_nav">
         <item>分时</item>
         <item>1分钟</item>

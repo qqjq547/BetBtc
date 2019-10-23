@@ -30,7 +30,7 @@
             <com.betbtc.app.view.WaveLoadingView
                 android:layout_width="@dimen/space60"
                 android:layout_height="@dimen/space60"
-                app:wlv_borderColor="@color/color_4daa90"
+                app:wlv_borderColor="@color/rise"
                 app:wlv_borderWidth="@dimen/space2"
                 app:wlv_progressValue="40"
                 app:wlv_round_rectangle="true"
@@ -43,7 +43,7 @@
                 app:wlv_titleBottomColor="@color/text_white"
                 app:wlv_triangle_direction="north"
                 app:wlv_waveAmplitude="30"
-                app:wlv_waveColor="@color/color_4daa90"/>
+                app:wlv_waveColor="@color/rise"/>
 <!--            <com.betbtc.app.view.CircleProgress-->
 <!--                android:layout_width="@dimen/space60"-->
 <!--                android:layout_height="@dimen/space60"-->
@@ -87,7 +87,7 @@
             <com.betbtc.app.view.WaveLoadingView
                 android:layout_width="@dimen/space60"
                 android:layout_height="@dimen/space60"
-                app:wlv_borderColor="@color/color_c25466"
+                app:wlv_borderColor="@color/fall"
                 app:wlv_borderWidth="@dimen/space2"
                 app:wlv_progressValue="60"
                 app:wlv_round_rectangle="true"
@@ -100,7 +100,7 @@
                 app:wlv_titleBottomColor="@color/text_white"
                 app:wlv_triangle_direction="north"
                 app:wlv_waveAmplitude="30"
-                app:wlv_waveColor="@color/color_c25466"/>
+                app:wlv_waveColor="@color/fall"/>
 <!--            <com.betbtc.app.view.CircleProgress-->
 <!--                android:layout_width="@dimen/space60"-->
 <!--                android:layout_height="@dimen/space60"-->

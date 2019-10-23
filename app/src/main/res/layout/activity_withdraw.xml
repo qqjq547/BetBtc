@@ -107,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="@dimen/space10"
-                        android:textColor="@color/color_c25466"
+                        android:textColor="@color/fall"
                         android:textSize="@dimen/textfont13"
                         android:textStyle="bold"
                         android:text="@string/all"/>
