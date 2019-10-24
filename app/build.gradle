@@ -75,7 +75,7 @@ dependencies {
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46"
     implementation 'com.hjq:titlebar:6.0'
     implementation 'com.hjq:toast:8.0'
-    implementation 'com.airbnb.android:lottie:3.0.6'
+    implementation 'com.airbnb.android:lottie:3.1.0'
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'

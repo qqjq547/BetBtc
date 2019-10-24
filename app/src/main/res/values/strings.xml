@@ -125,4 +125,5 @@
         <item>平均成交价</item>
     </string-array>
 
+    <string name="start_use">开始使用</string>
 </resources>

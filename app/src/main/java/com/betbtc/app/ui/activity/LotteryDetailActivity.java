@@ -1,6 +1,7 @@
 package com.betbtc.app.ui.activity;
 
-import android.os.Bundle;
+import android.content.Intent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,16 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
-import com.betbtc.app.model.History;
 import com.betbtc.app.model.HistoryItem;
-import com.betbtc.app.ui.adapter.LotteryDetailItemAdapter;
-import com.betbtc.app.view.VerticalDecoration;
+import com.betbtc.app.ui.adapter.LotteryDetailAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LotteryDetailActivity extends MvpActivity {
@@ -30,7 +29,7 @@ public class LotteryDetailActivity extends MvpActivity {
     @BindView(R.id.rv_list)
     RecyclerView rvList;
 
-    LotteryDetailItemAdapter lotteryDetailItemAdapter;
+    LotteryDetailAdapter lotteryDetailAdapter;
     List<HistoryItem> historyItemList=new ArrayList<>();
 
     @Override
@@ -52,8 +51,14 @@ public class LotteryDetailActivity extends MvpActivity {
       historyItemList.add(new HistoryItem());
       historyItemList.add(new HistoryItem());
       historyItemList.add(new HistoryItem());
-      lotteryDetailItemAdapter = new LotteryDetailItemAdapter(historyItemList);
-      rvList.setAdapter(lotteryDetailItemAdapter);
+      lotteryDetailAdapter = new LotteryDetailAdapter(historyItemList);
+      lotteryDetailAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+          @Override
+          public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+              startActivity(new Intent(LotteryDetailActivity.this, LotteryTypeDetailActivity.class));
+          }
+      });
+      rvList.setAdapter(lotteryDetailAdapter);
     }
 
     @OnClick(R.id.iv_back)

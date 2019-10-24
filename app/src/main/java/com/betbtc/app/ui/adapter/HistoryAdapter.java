@@ -13,6 +13,7 @@ import com.betbtc.app.model.History;
 import com.betbtc.app.mvp.model.BetRecord;
 import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.ui.activity.LotteryDetailActivity;
+import com.betbtc.app.ui.activity.LotteryTypeDetailActivity;
 import com.betbtc.app.view.GridItemDecoration;
 import com.betbtc.app.view.VerticalDecoration;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -35,7 +36,7 @@ public class HistoryAdapter extends BaseQuickAdapter<History, BaseViewHolder> {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                mContext.startActivity(new Intent(mContext, LotteryDetailActivity.class));
+                mContext.startActivity(new Intent(mContext, LotteryTypeDetailActivity.class));
             }
         });
         rvItem.setAdapter(adapter);

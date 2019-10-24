@@ -12,7 +12,7 @@ import java.lang.reflect.Type;
 
 
 public class PrefUtil {
-    public static final String USER_ROLE = "user_role";
+    public static final String ISFRIST = "isFirst";
     public static final String MOBILE = "mobile";
     private SharedPreferences sharedPreference;
     private static PrefUtil preference = null;

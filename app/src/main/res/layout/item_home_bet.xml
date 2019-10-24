@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/space20"
+    android:paddingLeft="@dimen/space15"
     android:paddingTop="@dimen/space12"
-    android:paddingRight="@dimen/space20"
+    android:paddingRight="@dimen/space15"
     android:paddingBottom="@dimen/space12"
     android:background="@color/bg_white">
 
@@ -25,38 +25,31 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="@dimen/space60"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rise_stroke">
             <com.betbtc.app.view.WaveLoadingView
-                android:layout_width="@dimen/space60"
-                android:layout_height="@dimen/space60"
+                android:layout_width="@dimen/space50"
+                android:layout_height="@dimen/space50"
+                android:layout_marginLeft="@dimen/space10"
+                app:wlv_wave_background_Color="@color/bg_gray_normal"
                 app:wlv_borderColor="@color/rise"
-                app:wlv_borderWidth="@dimen/space2"
+                app:wlv_borderWidth="@dimen/space0"
                 app:wlv_progressValue="40"
-                app:wlv_round_rectangle="true"
+                app:wlv_round_rectangle="false"
                 app:wlv_shapeType="circle"
                 app:wlv_titleCenter="涨"
-                app:wlv_titleCenterColor="@color/text_black"
+                app:wlv_titleCenterColor="@color/text_white"
                 app:wlv_titleCenterSize="@dimen/textfont16"
-                app:wlv_titleBottom="x1.24"
-                app:wlv_titleBottomSize="@dimen/textfont11"
-                app:wlv_titleBottomColor="@color/text_white"
                 app:wlv_triangle_direction="north"
                 app:wlv_waveAmplitude="30"
                 app:wlv_waveColor="@color/rise"/>
-<!--            <com.betbtc.app.view.CircleProgress-->
-<!--                android:layout_width="@dimen/space60"-->
-<!--                android:layout_height="@dimen/space60"-->
-<!--                app:circle_progress="50"-->
-<!--                app:circle_text_size="@dimen/textfont13"-->
-<!--                app:circle_text_color="@color/text_white"-->
-<!--                app:circle_finished_color="@color/color_4daa90"-->
-<!--                app:circle_prefix_text="x"-->
-<!--                app:circle_title="@string/rise"/>-->
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/space10"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
@@ -65,55 +58,57 @@
                     android:id="@+id/tv_rise_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="赔率:1.32"
-                    android:textColor="@color/text_gray_drak"
-                    android:textSize="@dimen/textfont12" />
+                    android:text="x1.32"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/textfont16" />
 
                 <TextView
                     android:id="@+id/tv_rise_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space6"
-                    android:text="次数:12443"
+                    android:text="1244注"
                     android:textColor="@color/text_gray_drak"
                     android:textSize="@dimen/textfont12" />
             </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_rise_add"
+                style="@style/ViewClickStyle"
+                android:layout_width="@dimen/space30"
+                android:layout_height="match_parent"
+                android:background="@color/rise"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_add_white"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="@dimen/space60"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_fall_stroke"
+            android:layout_marginLeft="@dimen/space15">
             <com.betbtc.app.view.WaveLoadingView
-                android:layout_width="@dimen/space60"
-                android:layout_height="@dimen/space60"
+                android:layout_width="@dimen/space50"
+                android:layout_height="@dimen/space50"
+                android:layout_marginLeft="@dimen/space10"
+                app:wlv_wave_background_Color="@color/bg_gray_normal"
                 app:wlv_borderColor="@color/fall"
-                app:wlv_borderWidth="@dimen/space2"
+                app:wlv_borderWidth="@dimen/space0"
                 app:wlv_progressValue="60"
                 app:wlv_round_rectangle="true"
                 app:wlv_shapeType="circle"
                 app:wlv_titleCenter="@string/fall"
-                app:wlv_titleCenterColor="@color/text_black"
+                app:wlv_titleCenterColor="@color/text_white"
                 app:wlv_titleCenterSize="@dimen/textfont16"
-                app:wlv_titleBottom="x1.24"
-                app:wlv_titleBottomSize="@dimen/textfont11"
-                app:wlv_titleBottomColor="@color/text_white"
                 app:wlv_triangle_direction="north"
                 app:wlv_waveAmplitude="30"
                 app:wlv_waveColor="@color/fall"/>
-<!--            <com.betbtc.app.view.CircleProgress-->
-<!--                android:layout_width="@dimen/space60"-->
-<!--                android:layout_height="@dimen/space60"-->
-<!--                app:circle_progress="50"-->
-<!--                app:circle_text_size="@dimen/textfont13"-->
-<!--                app:circle_text_color="@color/text_white"-->
-<!--                app:circle_finished_color="@color/color_c25466"-->
-<!--                app:circle_prefix_text="x"-->
-<!--                app:circle_title="@string/fall"/>-->
-
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/space10"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
@@ -122,19 +117,28 @@
                     android:id="@+id/tv_down_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="赔率:1.32"
-                    android:textColor="@color/text_gray_drak"
-                    android:textSize="@dimen/textfont12" />
+                    android:text="x1.32"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/textfont16" />
 
                 <TextView
                     android:id="@+id/tv_down_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space6"
-                    android:text="次数:12443"
+                    android:text="1244注"
                     android:textColor="@color/text_gray_drak"
                     android:textSize="@dimen/textfont12" />
             </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_fall_add"
+                style="@style/ViewClickStyle"
+                android:layout_width="@dimen/space30"
+                android:layout_height="match_parent"
+                android:background="@color/fall"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_add_white"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

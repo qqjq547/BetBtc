@@ -73,7 +73,7 @@ public class TrendFragment extends MvpFragment {
     String[] periods;
     String symbol = "btcusdt";
     int curPosition=1;
-    int size = 50;
+    int size = 60;
     List<KLine> klines = new ArrayList<>();
     FragmentContainerHelper mFragmentContainerHelper;
 
@@ -215,7 +215,7 @@ public class TrendFragment extends MvpFragment {
 
     private void initKline() {
         TextView loadingView = new TextView(getContext());
-        loadingView.setTextColor(getResources().getColor(R.color.white));
+        loadingView.setTextColor(getResources().getColor(R.color.text_gray));
         loadingView.setText("正在加载...");
         adapter = new KLineChartAdapter();
 
