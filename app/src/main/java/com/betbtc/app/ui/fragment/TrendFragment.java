@@ -287,6 +287,9 @@ public class TrendFragment extends MvpFragment {
                         klines.addAll(0, temp);
                         adapter.resetData(klines,true );
                         kLineChartView.hideLoading();
+                        if (WebSocketManager.getInstance().isSockeOpen()){
+                            WebSocketManager.getInstance().disconnectSocket();
+                        }
                         connectWebSocket();
                 }
             }

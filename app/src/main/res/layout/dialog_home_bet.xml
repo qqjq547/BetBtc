@@ -5,25 +5,30 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:background="@drawable/bg_dialog_white">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space40"
+        android:layout_height="@dimen/space45"
+        android:gravity="center_vertical"
         android:paddingLeft="@dimen/space15"
-        android:paddingRight="@dimen/space15"
-        android:gravity="center_vertical">
+        android:paddingRight="@dimen/space15">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:textColor="@color/text_black"
             android:textSize="@dimen/textfont13"
             android:text="@string/compose_bet"/>
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+        <View
+            android:layout_width="@dimen/space40"
+            android:layout_height="@dimen/space2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_indicate"/>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,7 +44,7 @@
                 android:text="1235.12"/>
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
     <include layout="@layout/layout_divide_line"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_bet"

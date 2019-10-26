@@ -1,5 +1,6 @@
 package com.betbtc.app.ui.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,13 @@ import android.widget.TextView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
+import com.betbtc.app.tools.Constant;
 import com.betbtc.app.ui.activity.common.MyCaptureActivity;
+import com.donkingliang.imageselector.utils.ImageSelector;
+import com.hjq.toast.ToastUtils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.security.Permission;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -61,7 +68,15 @@ public class WithDrawActivity extends MvpActivity {
                 onBackPressed();
                 break;
             case R.id.tv_scan:
-                startActivity(new Intent(this, MyCaptureActivity.class));
+                new RxPermissions(this)
+                        .request(Manifest.permission.CAMERA)
+                        .subscribe(granted -> {
+                            if (granted) {
+                                startActivity(new Intent(this, MyCaptureActivity.class));
+                            } else {
+                                ToastUtils.show(R.string.get_pic_permission);
+                            }
+                        });
                 break;
             case R.id.tv_all:
                 break;

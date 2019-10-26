@@ -122,6 +122,9 @@ public class CommonUtil {
         return m.matches();
     }
 
+    public static String encryptMobile(String mobile){
+       return mobile.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
+    }
     /**
      * 将string转化成date
      *

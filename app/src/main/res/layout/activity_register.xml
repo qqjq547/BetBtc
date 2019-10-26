@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:src="@drawable/bg_user_top"/>
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space30"
+        android:layout_marginTop="@dimen/space40"
+        android:textSize="@dimen/textfont16"
+        android:textColor="@color/text_white"
+        android:textStyle="bold"
+        android:text="@string/cancel"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space50"
+        android:layout_marginTop="@dimen/space150"
+        android:layout_marginRight="@dimen/space50"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/textfont22"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space30"
+                android:text="@string/phone_number"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/textfont16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space20">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/space10"
+                    android:paddingRight="@dimen/space10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_arrow_down_white"
+                        android:drawablePadding="@dimen/space3"
+                        android:text="@string/default_country_code"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/textfont14"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/space1"
+                    android:layout_height="@dimen/space20"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/bg_white" />
+
+                <com.betbtc.app.view.ClearEditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_close_white"
+                    android:background="@null"
+                    android:hint="@string/pls_input_mobile"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:paddingLeft="@dimen/space15"
+                    android:paddingTop="@dimen/space10"
+                    android:paddingBottom="@dimen/space10"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/textfont14" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space1"
+                android:background="@color/bg_white" />
+
+
+            <Button
+                android:id="@+id/btn_register"
+                style="@style/ViewClickStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space45"
+                android:layout_marginTop="@dimen/space30"
+                android:background="@drawable/bg_btn_normal"
+                android:text="@string/register"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/textfont15" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space20">
+                <TextView
+                    android:id="@+id/tv_go_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/textfont13"
+                    android:text="@string/has_account_and_login"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -13,7 +13,7 @@
     <string name="unknow_error_and_late">未知错误，请稍后再试</string>
     <string name="press_again_to_exit">再按一次退出</string>
     <string name="dialog_title">温馨提示</string>
-    <string name="confirm">确定</string>
+    <string name="ensure">确定</string>
     <string name="cancel">取消</string>
 
     <string name="btc2usdt">BTC/USDT</string>
@@ -42,6 +42,9 @@
     <string name="recharge">充值</string>
     <string name="widthdraw">提币</string>
     <string name="balance_detail">收支明细</string>
+    <string name="this_period_profit_">本期收益：</string>
+    <string name="share_result">分享战绩</string>
+
 
 
     <string name="menu_recommend">推荐有礼</string>
@@ -126,4 +129,28 @@
     </string-array>
 
     <string name="start_use">开始使用</string>
+    <string name="welcome_use">欢迎使用</string>
+    <string name="code_login">验证码登录</string>
+    <string name="pwd_login">密码登录</string>
+    <string name="pls_input_mobile">请输入手机号码</string>
+    <string name="pls_input_code">请输入验证码</string>
+    <string name="pls_input_pwd">请输入密码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="reget_code">重新获取</string>
+    <string name="login">登录</string>
+    <string name="register_account">注册账号</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="register">注册</string>
+    <string name="phone_number">手机号码</string>
+    <string name="has_account_and_login">已有账号？马上登录</string>
+    <string name="next_step">下一步</string>
+
+    <string name="reset_pwd">重置密码</string>
+    <string name="set_pwd">设置密码</string>
+    <string name="pls_input_pwd_again">请再次输入密码</string>
+
+    <string name="vertify_code">验证手机号</string>
+    <string name="sms_code">短信验证码</string>
+    <string name="default_country_code">+86</string>
+
 </resources>

@@ -13,15 +13,16 @@ import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 
+import androidx.appcompat.widget.AppCompatEditText;
+
 import com.betbtc.app.R;
 
 
-public class ClearEditText extends EditText implements View.OnFocusChangeListener, TextWatcher {
+public class ClearEditText extends AppCompatEditText implements TextWatcher {
     /**
      * 删除按钮的引用
      */
     private Drawable mClearDrawable;
-    private Context context;
 
     /**
      * 控件是否有焦点
@@ -45,6 +46,17 @@ public class ClearEditText extends EditText implements View.OnFocusChangeListene
         init();
     }
 
+    @Override
+    protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
+        super.onFocusChanged(focused, direction, previouslyFocusedRect);
+        this.hasFocus = focused;
+        if (hasFocus) {
+            setClearIconVisible(getText().length() > 0);
+        } else {
+            setClearIconVisible(false);
+        }
+    }
+
     private void init() {
         //获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
         mClearDrawable = getCompoundDrawables()[2];
@@ -55,10 +67,10 @@ public class ClearEditText extends EditText implements View.OnFocusChangeListene
         //默认设置隐藏图标
         setClearIconVisible(false);
         //设置焦点改变的监听
-        setOnFocusChangeListener(this);
         //设置输入框里面内容发生改变的监听
         addTextChangedListener(this);
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -94,19 +106,6 @@ public class ClearEditText extends EditText implements View.OnFocusChangeListene
         Drawable right = visible ? mClearDrawable : null;
         setCompoundDrawables(getCompoundDrawables()[0], getCompoundDrawables()[1],
                 right, getCompoundDrawables()[3]);
-    }
-
-    /**
-     * 当ClearEditText焦点发生变化的时候，判断里面字符串长度设置清除图标的显示与隐藏
-     */
-    @Override
-    public void onFocusChange(View v, boolean hasFocus) {
-        this.hasFocus = hasFocus;
-        if (hasFocus) {
-            setClearIconVisible(getText().length() > 0);
-        } else {
-            setClearIconVisible(false);
-        }
     }
 
     /**

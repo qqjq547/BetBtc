@@ -1,16 +1,32 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
 
+MobSDK {
+    appKey "2cdd5bd0435b7"
+    appSecret "e05b4fc916f351cb47a617b6d0f67e35"
+    SecVerify {}
+    SMSSDK {}
+
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.betbtc.app"
+        applicationId "com.betbtc.jks.jks.app"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        config {
+            storeFile file('betbtc.jks')
+            storePassword "betbtc2019"
+            keyAlias "betbtc"
+            keyPassword "betbtc2019"
+        }
     }
     buildTypes {
         debug {
@@ -20,6 +36,7 @@ android {
             shrinkResources false
             zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
 
         release {
@@ -29,6 +46,7 @@ android {
             shrinkResources true
             zipAlignEnabled true//去除无用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
@@ -78,7 +96,6 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.1.0'
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
-    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
     implementation("io.reactivex.rxjava2:rxkotlin:2.0.0")
     implementation 'com.icechao.klinelib:klinelib:1.0.4'
     implementation 'com.allenliu.versionchecklib:library:2.1.5'

@@ -59,7 +59,7 @@ public class HomeBetDialog extends MvpDialog {
                         new CommonDialog.Builder()
                                 .setTitle(R.string.dialog_title)
                                 .setMessage(R.string.ensure_delete_this_bet)
-                                .setConfirmBtn(R.string.confirm, v -> {
+                                .setConfirmBtn(R.string.ensure, v -> {
                                     homeMyBetList.remove(position);
                                     homeMyBetAdapter.notifyItemRemoved(position);
                                 })

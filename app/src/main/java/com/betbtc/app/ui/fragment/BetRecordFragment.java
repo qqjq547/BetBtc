@@ -57,12 +57,12 @@ public class BetRecordFragment extends MvpFragment {
         item2.add(new BetItem());
         item2.add(new BetItem());
         item2.add(new BetItem());
+        item2.add(new BetItem());
         betRecord2.setList(item2);
         betRecords.add(betRecord2);
 
         BetRecord betRecord3=new BetRecord();
         List<BetItem> item3=new ArrayList<>();
-        item3.add(new BetItem());
         item3.add(new BetItem());
         item3.add(new BetItem());
         item3.add(new BetItem());

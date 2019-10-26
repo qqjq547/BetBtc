@@ -35,8 +35,10 @@ public class HomeMyBetAdapter extends BaseQuickAdapter<HomeMyBet,BaseViewHolder>
         helper.addOnClickListener(R.id.iv_close);
         if (operatePos==helper.getAdapterPosition()){
             helper.setGone(R.id.lin_operate,true);
+            helper.setImageResource(R.id.iv_arrow,R.drawable.ic_expand);
         }else {
             helper.setGone(R.id.lin_operate,false);
+            helper.setImageResource(R.id.iv_arrow,R.drawable.ic_collse);
         }
         RecyclerView rvDial=helper.getView(R.id.rv_dial);
         if (rvDial.getAdapter()==null) {

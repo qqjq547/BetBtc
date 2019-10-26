@@ -16,11 +16,6 @@ import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 import okio.ByteString;
 
-/**
- * @author chenyan@huobi.com
- * @date 2019/8/21 18:07
- * @desp
- */
 public class WebSocketManager {
 
 

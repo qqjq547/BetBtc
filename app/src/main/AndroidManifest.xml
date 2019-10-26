@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.betbtc.app">
 
     <dist:module dist:instant="true" />
@@ -29,6 +30,7 @@
     <application
         android:name=".app.App"
         android:allowBackup="true"
+        tools:replace="android:allowBackup"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -48,7 +50,8 @@
         <activity android:name=".ui.activity.RechargeActivity"/>
         <activity android:name=".ui.activity.WithDrawActivity"/>
         <activity android:name=".ui.activity.CoinDetailActivity"/>
-        <activity android:name=".ui.activity.common.MyCaptureActivity"/>
+        <activity android:name=".ui.activity.common.MyCaptureActivity"
+            android:theme="@style/TransTheme"/>
         <activity android:name=".ui.activity.SettingActivity"/>
         <activity android:name=".ui.activity.PersonInfoActivity"/>
         <activity android:name=".ui.activity.SetNickNameActivity"/>
@@ -56,6 +59,17 @@
         <activity android:name=".ui.activity.SafeCenterActivity"/>
         <activity android:name=".ui.activity.LotteryDetailActivity"/>
         <activity android:name=".ui.activity.LotteryTypeDetailActivity"/>
+
+        <activity android:name=".ui.activity.login.LoginActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/TransTheme"/>
+        <activity android:name=".ui.activity.login.RegisterActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/TransTheme"/>
+        <activity android:name=".ui.activity.login.ForgetPwdActivity"
+            android:theme="@style/TransTheme"/>
+        <activity android:name=".ui.activity.login.ResetPwdAtivity"
+            android:theme="@style/TransTheme"/>
 
         //图片选择Activity
         <activity android:name="com.donkingliang.imageselector.ImageSelectorActivity"

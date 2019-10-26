@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.tools.PrefUtil;
+import com.betbtc.app.ui.activity.login.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,7 +67,11 @@ public class SplashActivity extends MvpActivity {
                             startActivity(new Intent(SplashActivity.this, StartActivity.class));
                             PrefUtil.getInstance().setBoolean(PrefUtil.ISFRIST, false);
                         } else {
-                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                            if (TextUtils.isEmpty(PrefUtil.getInstance().getString(PrefUtil.USER_TOKEN,""))){
+                                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                            }else {
+                                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                            }
                         }
                     }
                 }, 1000);

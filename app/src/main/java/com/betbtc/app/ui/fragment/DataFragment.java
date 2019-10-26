@@ -105,5 +105,4 @@ public class DataFragment extends MvpFragment {
         rbtnTrend.setChecked(true);
     }
 
-
 }
