@@ -40,24 +40,15 @@
     <color name="bg_divide">#dbdbdb</color>
     <color name="bg_follow">#ff344b</color>
     <color name="bg_msg_dot">#ff344b</color>
-    <color name="bg_speed_select">#cc000000</color>
-    <color name="bg_edit_panel">#242730</color>
-    <color name="bg_playing">#05ceb0</color>
     <color name="bg_reply">#f3f3f3</color>
     <color name="bg_frame_color">#999999</color>
     <color name="bg_btn_login_phone">#ff3b3b</color>
     <color name="bg_line_login">#e5e5e5</color>
-    <color name="bg_edit_redbag">#eeeeee</color>
     <color name="bg_yellow">#ffc618</color>
-    <color name="bg_text_yellow_bag">#ffc618</color>
     <color name="bg_red">#ff3b3b</color>
-    <color name="bg_center_yellow">#ffc65f</color>
-    <color name="bg_center_green">#23d6c3</color>
-    <color name="bg_center_purple">#aea9ff</color>
-    <color name="bg_green">#96c160</color>
-    <color name="bg_city_bid_hall_right_gray">#bfbdbd</color>
-    <color name="bg_rain">#e84047</color>
-    <color name="bg_active">#86e0de</color>
+    <color name="bg_green">#23d6c3</color>
+    <color name="bg_purple">#aea9ff</color>
+    <color name="bg_green_light">#96c160</color>
     <color name="bg_trans_white">#e6ffffff</color>
 
 
@@ -77,15 +68,6 @@
     <color name="color_eeeeee">#eeeeee</color>
     <color name="color_f2dc9c">#f2dc9c</color>
     <color name="color_c297f7">#c297f7</color>
-
-
-
-
-
-
-
-
-
 
 
 </resources>

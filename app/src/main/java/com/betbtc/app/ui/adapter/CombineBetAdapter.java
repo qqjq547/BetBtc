@@ -19,12 +19,12 @@ import com.hjq.toast.ToastUtils;
 import java.util.Arrays;
 import java.util.List;
 
-public class HomeMyBetAdapter extends BaseQuickAdapter<HomeMyBet,BaseViewHolder> {
+public class CombineBetAdapter extends BaseQuickAdapter<HomeMyBet, BaseViewHolder> {
     int operatePos=-1;
     int max=0;
 
-    public HomeMyBetAdapter(@Nullable List<HomeMyBet> data) {
-        super(R.layout.item_home_my_bet,data);
+    public CombineBetAdapter(@Nullable List<HomeMyBet> data) {
+        super(R.layout.item_combine_bet, data);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class HomeMyBetAdapter extends BaseQuickAdapter<HomeMyBet,BaseViewHolder>
         RecyclerView rvDial=helper.getView(R.id.rv_dial);
         if (rvDial.getAdapter()==null) {
             rvDial.setLayoutManager(new GridLayoutManager(mContext, 4));
-            rvDial.addItemDecoration(new GridItemDecoration(4, 3, true));
+            rvDial.addItemDecoration(new GridItemDecoration(4, 2, true));
             DialAdapter adapter=new DialAdapter(Arrays.asList(Constant.DIAL_DATA));
             adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override

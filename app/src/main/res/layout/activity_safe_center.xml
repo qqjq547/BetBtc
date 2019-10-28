@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <include layout="@layout/layout_title"/>
+
+    <include layout="@layout/layout_title" />
 
     <LinearLayout
         android:id="@+id/lin_change_login_pwd"
@@ -19,18 +20,21 @@
         android:gravity="center_vertical"
         android:background="@drawable/bg_white_block"
         android:elevation="@dimen/space3">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:textSize="@dimen/textfont15"
                 android:textColor="@color/text_black"
-                android:text="@string/change_login_pwd"/>
+                android:text="@string/change_login_pwd" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,13 +42,15 @@
                 android:lines="1"
                 android:textSize="@dimen/textfont13"
                 android:textColor="@color/text_gray"
-                android:text="@string/change_login_pwd_hint"/>
+                android:text="@string/change_login_pwd_hint" />
         </LinearLayout>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
+            android:src="@drawable/ic_arrow_right" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/lin_change_trade_pwd"
         android:layout_width="match_parent"
@@ -59,18 +65,21 @@
         android:gravity="center_vertical"
         android:background="@drawable/bg_white_block"
         android:elevation="@dimen/space3">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:textSize="@dimen/textfont15"
                 android:textColor="@color/text_black"
-                android:text="@string/change_trade_pwd"/>
+                android:text="@string/change_trade_pwd" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,13 +87,15 @@
                 android:lines="1"
                 android:textSize="@dimen/textfont13"
                 android:textColor="@color/text_gray"
-                android:text="@string/change_trade_pwd_hint"/>
+                android:text="@string/change_trade_pwd_hint" />
         </LinearLayout>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
+            android:src="@drawable/ic_arrow_right" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/lin_bind_email"
         android:layout_width="match_parent"
@@ -99,18 +110,21 @@
         android:gravity="center_vertical"
         android:background="@drawable/bg_white_block"
         android:elevation="@dimen/space3">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:textSize="@dimen/textfont15"
                 android:textColor="@color/text_black"
-                android:text="@string/bind_email"/>
+                android:text="@string/bind_email" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,11 +132,12 @@
                 android:lines="1"
                 android:textSize="@dimen/textfont13"
                 android:textColor="@color/text_gray"
-                android:text="@string/bind_email_hint"/>
+                android:text="@string/bind_email_hint" />
         </LinearLayout>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"/>
+            android:src="@drawable/ic_arrow_right" />
     </LinearLayout>
 </LinearLayout>

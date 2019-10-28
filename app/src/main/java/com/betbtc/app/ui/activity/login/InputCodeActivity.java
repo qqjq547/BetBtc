@@ -1,7 +1,6 @@
 package com.betbtc.app.ui.activity.login;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +16,9 @@ import com.betbtc.app.tools.Constant;
 import com.betbtc.app.tools.LogUtil;
 import com.betbtc.app.tools.ProgressDialog;
 import com.betbtc.app.tools.RxUtil;
-import com.betbtc.app.ui.activity.MainActivity;
 import com.hjq.toast.ToastUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
@@ -47,9 +44,6 @@ public class InputCodeActivity extends MvpActivity {
     String mobile;
     String code;
     int type;
-    public static final int TYPE_REGISTER=1;
-    public static final int TYPE_FORGET_PWD=2;
-    public static final int TYPE_CHANGE_PWD=3;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -64,10 +58,13 @@ public class InputCodeActivity extends MvpActivity {
     @Override
     public void initViewAndData() {
         mobile=getIntent().getStringExtra(Constant.MOBILE);
-        type=getIntent().getIntExtra(Constant.TYPE,TYPE_REGISTER);
+        type = getIntent().getIntExtra(Constant.TYPE, Constant.TYPE_REGISTER);
         tvMobile.setText(CommonUtil.encryptMobile(mobile));
         etCode.setOnFocusChangeListener(focusChangeListener);
-
+        SMSSDK.unregisterAllEventHandler();
+        SMSSDK.registerEventHandler(eh);
+        ProgressDialog.start();
+        tvGetcode.callOnClick();
 
     }
 
@@ -79,12 +76,12 @@ public class InputCodeActivity extends MvpActivity {
                 break;
             case R.id.tv_getcode:
                 ProgressDialog.start();
-                SMSSDK.getVerificationCode(Constant.ADDRESS,mobile);
+                SMSSDK.getVerificationCode(Constant.COUNTRY_CODE, mobile);
                 break;
             case R.id.btn_next:
                 code=etCode.getText().toString().trim();
                 if(TextUtils.isEmpty(code)){
-                    ToastUtils.show("验证码");
+                    ToastUtils.show("验证码不能为空");
                 }else {
                     ProgressDialog.start();
                     SMSSDK.submitVerificationCode(Constant.COUNTRY_CODE,mobile,code);
@@ -106,49 +103,62 @@ public class InputCodeActivity extends MvpActivity {
             }
         }
     };
-    public void initSms(){
-        EventHandler eh=new EventHandler(){
+    EventHandler eh = new EventHandler() {
 
-            @Override
-            public void afterEvent(int event, int result, Object data) {
-                LogUtil.d("event="+event+",data="+data);
-                if (result == SMSSDK.RESULT_COMPLETE) {
-                    //回调完成
-                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                        //提交验证码成功
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                ProgressDialog.stop();
-//                                startActivity(new Intent(InputCodeActivity.this, MainActivity.class));
-                            }
-                        });
-                    }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
-                        //获取验证码成功
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                ProgressDialog.stop();
-                                sendCode();
-                            }
-                        });
-                    }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
-                        //返回支持发送验证码的国家列表
-                    }
-                }else{
-                    ((Throwable)data).printStackTrace();
+        @Override
+        public void afterEvent(int event, int result, Object data) {
+            LogUtil.d("event=" + event + ",data=" + data);
+            if (result == SMSSDK.RESULT_COMPLETE) {
+                //回调完成
+                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                    //提交验证码成功
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             ProgressDialog.stop();
-                            ToastUtils.show(((Throwable)data).getMessage());
+                            switch (type) {
+                                case Constant.TYPE_REGISTER:
+                                    startActivity(new Intent(InputCodeActivity.this, ResetPwdAtivity.class)
+                                            .putExtra(Constant.TYPE, Constant.TYPE_REGISTER)
+                                            .putExtra(Constant.MOBILE, mobile));
+                                    break;
+                                case Constant.TYPE_FORGET_PWD:
+                                    startActivity(new Intent(InputCodeActivity.this, ResetPwdAtivity.class)
+                                            .putExtra(Constant.TYPE, Constant.TYPE_FORGET_PWD)
+                                            .putExtra(Constant.MOBILE, mobile));
+                                    break;
+                                case Constant.TYPE_CHANGE_PWD:
+                                    finish();
+                                    break;
+                            }
+//
                         }
                     });
+                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                    //获取验证码成功
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ProgressDialog.stop();
+                            sendCode();
+                        }
+                    });
+                } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
+                    //返回支持发送验证码的国家列表
                 }
+            } else {
+                ((Throwable) data).printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ProgressDialog.stop();
+                        ToastUtils.show(((Throwable) data).getMessage());
+                    }
+                });
             }
-        };
-        SMSSDK.registerEventHandler(eh); //注册
-    }
+        }
+    };
+
     private void sendCode() {
         RxUtil.countdown(60)
                 .doOnSubscribe(disposable -> {
@@ -180,4 +190,9 @@ public class InputCodeActivity extends MvpActivity {
                 });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SMSSDK.unregisterEventHandler(eh);
+    }
 }

@@ -8,15 +8,16 @@
     android:layout_marginRight="@dimen/space15"
     android:elevation="@dimen/space3"
     android:background="@drawable/bg_item_white">
+
     <LinearLayout
         android:id="@+id/lin_top"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space45"
+        android:layout_height="@dimen/space40"
         android:background="@drawable/bg_item_top_gray"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/space15"
-        android:paddingRight="@dimen/space15"
-        >
+        android:paddingRight="@dimen/space15">
+
         <TextView
             android:id="@+id/tv_period"
             android:layout_width="wrap_content"
@@ -24,72 +25,91 @@
             android:textColor="@color/text_white"
             android:textStyle="bold"
             android:textSize="@dimen/textfont14"
-            android:text="20191004期"/>
+            android:text="20191004期" />
+
         <ImageView
             android:id="@+id/iv_cup"
             android:layout_width="@dimen/space28"
             android:layout_height="@dimen/space28"
-            android:layout_marginLeft="@dimen/space10"
-            android:src="@drawable/ic_cup"/>
+            android:layout_marginLeft="@dimen/space5"
+            android:src="@drawable/ic_reward" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space5"
+            android:textSize="@dimen/textfont12"
+            android:textColor="@color/text_white" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/tv_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_white"
             android:textSize="@dimen/textfont14"
-            android:text="共1234"/>
+            android:text="共1234" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <include layout="@layout/layout_divide_line"/>
+
+        <include layout="@layout/layout_divide_line" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
-        <LinearLayout
-            android:id="@+id/lin_bottom"
-            android:layout_width="match_parent"
+
+    <LinearLayout
+        android:id="@+id/lin_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space10"
+        android:paddingBottom="@dimen/space10"
+        android:paddingLeft="@dimen/space15"
+        android:paddingRight="@dimen/space15">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/space10"
-            android:paddingBottom="@dimen/space10"
-            android:paddingLeft="@dimen/space15"
-            android:paddingRight="@dimen/space15">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_black"
-                android:textSize="@dimen/textfont13"
-                android:text="@string/this_period_profit_"/>
-            <TextView
-                android:id="@+id/tv_profit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_yellow"
-                android:textStyle="bold"
-                android:textSize="@dimen/textfont16"
-                android:text="2434.34"/>
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-            <TextView
-                android:id="@+id/tv_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/space6"
-                android:paddingBottom="@dimen/space6"
-                android:paddingLeft="@dimen/space10"
-                android:paddingRight="@dimen/space10"
-                android:background="@drawable/bg_btn_stroke"
-                android:textColor="@color/text_theme"
-                android:textSize="@dimen/textfont13"
-                android:text="@string/share_result"/>
-        </LinearLayout>
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textfont13"
+            android:text="@string/this_period_profit_" />
+
+        <TextView
+            android:id="@+id/tv_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_yellow"
+            android:textStyle="bold"
+            android:textSize="@dimen/textfont16"
+            android:text="2434.34" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/space5"
+            android:paddingBottom="@dimen/space5"
+            android:paddingLeft="@dimen/space10"
+            android:paddingRight="@dimen/space10"
+            android:background="@drawable/bg_btn_stroke"
+            android:textColor="@color/text_theme"
+            android:textSize="@dimen/textfont12"
+            android:text="@string/share_result" />
     </LinearLayout>
+</LinearLayout>

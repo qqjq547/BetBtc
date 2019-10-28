@@ -31,4 +31,8 @@ public class Constant {
     public static final int REQUEST_PICK_PICTURE = 0x11 ;
     public static final String NICKNAME = "nickname";
     public static final String FORMAT_DATE = "yyyy-MM-dd";
+
+    public static final int TYPE_REGISTER = 1;
+    public static final int TYPE_FORGET_PWD = 2;
+    public static final int TYPE_CHANGE_PWD = 3;
 }

@@ -3,19 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<include
-    android:id="@+id/lin_title"
-    layout="@layout/layout_title_text"/>
+
+    <include
+        android:id="@+id/lin_title"
+        layout="@layout/layout_title_text" />
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/srl_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/space15"
             android:layout_marginRight="@dimen/space15"
-            android:layout_marginTop="@dimen/space15"/>
+            android:layout_marginTop="@dimen/space15" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

@@ -1,7 +1,7 @@
 package com.betbtc.app.ui.activity.login;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,17 +9,13 @@ import android.widget.TextView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
-import com.betbtc.app.tools.LogUtil;
-import com.betbtc.app.tools.ProgressDialog;
-import com.betbtc.app.ui.activity.MainActivity;
+import com.betbtc.app.tools.CommonUtil;
+import com.betbtc.app.tools.Constant;
 import com.betbtc.app.view.ClearEditText;
 import com.hjq.toast.ToastUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
 
 public class RegisterActivity extends MvpActivity {
     @BindView(R.id.et_mobile)
@@ -30,6 +26,8 @@ public class RegisterActivity extends MvpActivity {
     Button btnRegister;
     @BindView(R.id.tv_go_login)
     TextView tvGoLogin;
+
+    String mobile;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -66,6 +64,16 @@ public class RegisterActivity extends MvpActivity {
                 onBackPressed();
                 break;
             case R.id.btn_register:
+                mobile = etMobile.getText().toString().trim();
+                if (TextUtils.isEmpty(mobile)) {
+                    ToastUtils.show("手机号不能为空");
+                } else if (!CommonUtil.isMobileNO(mobile)) {
+                    ToastUtils.show("手机号格式不正确");
+                } else {
+                    startActivity(new Intent(this, InputCodeActivity.class)
+                            .putExtra(Constant.TYPE, Constant.TYPE_REGISTER)
+                            .putExtra(Constant.MOBILE, mobile));
+                }
                 break;
             case R.id.tv_go_login:
                 startActivity(new Intent(this,LoginActivity.class));

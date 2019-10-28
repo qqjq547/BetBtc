@@ -56,8 +56,6 @@ public class BetRecordFragment extends MvpFragment {
         List<BetItem> item2=new ArrayList<>();
         item2.add(new BetItem());
         item2.add(new BetItem());
-        item2.add(new BetItem());
-        item2.add(new BetItem());
         betRecord2.setList(item2);
         betRecords.add(betRecord2);
 
@@ -66,8 +64,16 @@ public class BetRecordFragment extends MvpFragment {
         item3.add(new BetItem());
         item3.add(new BetItem());
         item3.add(new BetItem());
+        item3.add(new BetItem());
         betRecord3.setList(item3);
         betRecords.add(betRecord3);
+
+        BetRecord betRecord4 = new BetRecord();
+        List<BetItem> item4 = new ArrayList<>();
+        item4.add(new BetItem());
+        item4.add(new BetItem());
+        betRecord4.setList(item4);
+        betRecords.add(betRecord4);
 
         betRecordAdapter=new BetRecordAdapter(betRecords);
         rvBetRecord.setAdapter(betRecordAdapter);

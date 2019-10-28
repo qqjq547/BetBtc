@@ -10,7 +10,6 @@ import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.inputmethod.EditorInfo;
 

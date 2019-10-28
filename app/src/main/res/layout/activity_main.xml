@@ -15,36 +15,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <include layout="@layout/layout_divide_line"/>
+
+        <include layout="@layout/layout_divide_line" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RadioGroup
                 android:id="@+id/rgroup_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:background="@color/bg_white">
+
                 <RadioButton
                     android:id="@+id/rbtn_home"
                     style="@style/rdbtn_nav"
                     android:drawableTop="@drawable/tab_home_selector"
-                    android:text="@string/tab_home"/>
+                    android:text="@string/tab_home" />
+
                 <RadioButton
                     android:id="@+id/rbtn_data"
                     style="@style/rdbtn_nav"
                     android:drawableTop="@drawable/tab_data_selector"
-                    android:text="@string/tab_data"/>
+                    android:text="@string/tab_data" />
+
                 <RadioButton
                     android:id="@+id/rbtn_betlist"
                     style="@style/rdbtn_nav"
                     android:drawableTop="@drawable/tab_betlist_selector"
-                    android:text="@string/tab_bet_list"/>
+                    android:text="@string/tab_bet_list" />
+
                 <RadioButton
                     android:id="@+id/rbtn_user"
                     style="@style/rdbtn_nav"
                     android:drawableTop="@drawable/tab_user_selector"
-                    android:text="@string/tab_user"/>
+                    android:text="@string/tab_user" />
             </RadioGroup>
         </FrameLayout>
     </LinearLayout>

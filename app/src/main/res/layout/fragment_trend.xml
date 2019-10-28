@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <net.lucode.hackware.magicindicator.MagicIndicator
             android:id="@+id/magic_indicator"
             android:layout_width="match_parent"
             android:layout_height="@dimen/space30" />
-            <include layout="@layout/layout_divide_line"/>
+
+        <include layout="@layout/layout_divide_line" />
 
         <com.icechao.klinelib.view.KLineChartView
             android:id="@+id/kLineChartView"
@@ -50,8 +50,8 @@
             app:timeLineColor="@color/white"
             app:priceLineBoxShapeTextMargin="@dimen/space10"
             app:priceLineBoxBorderColor="@color/white"
-            app:candleWidth="@dimen/space9"
-            app:itemWidth="@dimen/space10"/>
+            app:candleWidth="@dimen/space8"
+            app:itemWidth="@dimen/space9" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,6 +156,6 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false" />
         </LinearLayout>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
 

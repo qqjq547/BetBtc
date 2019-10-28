@@ -2,7 +2,6 @@ package com.betbtc.app.ui.fragment;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,11 +12,7 @@ import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpFragment;
 import com.betbtc.app.model.History;
 import com.betbtc.app.model.HistoryItem;
-import com.betbtc.app.mvp.model.BetItem;
-import com.betbtc.app.mvp.model.BetRecord;
-import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.ui.activity.LotteryDetailActivity;
-import com.betbtc.app.ui.adapter.BetRecordAdapter;
 import com.betbtc.app.ui.adapter.HistoryAdapter;
 import com.betbtc.app.view.VerticalDecoration;
 import com.chad.library.adapter.base.BaseQuickAdapter;

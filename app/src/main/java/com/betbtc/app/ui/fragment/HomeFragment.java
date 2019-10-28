@@ -1,6 +1,8 @@
 package com.betbtc.app.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,10 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpFragment;
+import com.betbtc.app.model.HomeMyBet;
 import com.betbtc.app.mvp.model.HomeBet;
+import com.betbtc.app.ui.activity.LotteryTypeDetailActivity;
+import com.betbtc.app.ui.activity.PeriodDetailActivity;
 import com.betbtc.app.ui.adapter.HomeBetAdapter;
-import com.betbtc.app.ui.dialog.HomeBetDialog;
+import com.betbtc.app.ui.dialog.BetDialog;
+import com.betbtc.app.ui.dialog.CombineBetDialog;
 import com.betbtc.app.view.VerticalDecoration;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -77,9 +84,28 @@ public class HomeFragment extends MvpFragment {
             homeBets.add(new HomeBet(titles[i]));
         }
         homeBetAdapter = new HomeBetAdapter(homeBets);
+        homeBetAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(), LotteryTypeDetailActivity.class));
+            }
+        });
+        homeBetAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()) {
+                    case R.id.iv_rise_add:
+                        new BetDialog(new HomeMyBet(), 234.94).show(getFragmentManager());
+                        break;
+                    case R.id.iv_fall_add:
+                        new BetDialog(new HomeMyBet(), 234.13).show(getFragmentManager());
+                        break;
+                }
+
+            }
+        });
         rvBet.setAdapter(homeBetAdapter);
     }
-
     /**
      * 根据百分比改变颜色透明度
      */
@@ -91,8 +117,16 @@ public class HomeFragment extends MvpFragment {
         return Color.argb(alpha, red, green, blue);
     }
 
-    @OnClick(R.id.lin_my_betrecord)
-    public void onViewClicked() {
-       new HomeBetDialog().show(getFragmentManager());
+    @OnClick({R.id.lin_my_betrecord, R.id.tv_period_detail})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.lin_my_betrecord:
+                new CombineBetDialog().show(getFragmentManager());
+                break;
+            case R.id.tv_period_detail:
+                startActivity(new Intent(getActivity(), PeriodDetailActivity.class));
+                break;
+        }
+
     }
 }

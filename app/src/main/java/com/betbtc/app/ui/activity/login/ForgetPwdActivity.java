@@ -1,7 +1,7 @@
 package com.betbtc.app.ui.activity.login;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,10 +9,12 @@ import android.widget.TextView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
+import com.betbtc.app.tools.CommonUtil;
+import com.betbtc.app.tools.Constant;
 import com.betbtc.app.view.ClearEditText;
+import com.hjq.toast.ToastUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ForgetPwdActivity extends MvpActivity {
@@ -24,6 +26,8 @@ public class ForgetPwdActivity extends MvpActivity {
     View vLine;
     @BindView(R.id.btn_next)
     Button btnNext;
+
+    String mobile;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -61,7 +65,16 @@ public class ForgetPwdActivity extends MvpActivity {
                 onBackPressed();
                 break;
             case R.id.btn_next:
-                startActivity(new Intent(this,ResetPwdAtivity.class));
+                mobile = etMobile.getText().toString().trim();
+                if (TextUtils.isEmpty(mobile)) {
+                    ToastUtils.show("手机号不能为空");
+                } else if (!CommonUtil.isMobileNO(mobile)) {
+                    ToastUtils.show("手机号格式不正确");
+                } else {
+                    startActivity(new Intent(this, InputCodeActivity.class)
+                            .putExtra(Constant.TYPE, Constant.TYPE_FORGET_PWD)
+                            .putExtra(Constant.MOBILE, mobile));
+                }
                 break;
         }
     }

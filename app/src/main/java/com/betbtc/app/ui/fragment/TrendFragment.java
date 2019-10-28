@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;

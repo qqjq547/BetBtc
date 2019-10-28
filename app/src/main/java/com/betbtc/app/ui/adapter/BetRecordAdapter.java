@@ -21,20 +21,29 @@ public class BetRecordAdapter extends BaseQuickAdapter<BetRecord, BaseViewHolder
     protected void convert(BaseViewHolder helper, BetRecord item) {
         BetRecordItemAdapter adapter=new BetRecordItemAdapter(item.getList());
         if (helper.getAdapterPosition()==0){
-            helper.setBackgroundRes(R.id.lin_top,R.drawable.bg_item_top_red);
+            helper.setBackgroundRes(R.id.lin_top, R.drawable.bg_item_top_green);
             helper.setGone(R.id.lin_bottom,false);
             adapter.setShowWin(false);
             helper.setGone(R.id.iv_cup,false);
+            helper.setText(R.id.tv_state, "(下注中)");
         }else if(helper.getAdapterPosition()==1){
+            helper.setBackgroundRes(R.id.lin_top, R.drawable.bg_item_top_yellow);
+            helper.setGone(R.id.lin_bottom, false);
+            adapter.setShowWin(false);
+            helper.setGone(R.id.iv_cup, false);
+            helper.setText(R.id.tv_state, "(开奖中)");
+        } else if (helper.getAdapterPosition() == 2) {
             helper.setBackgroundRes(R.id.lin_top,R.drawable.bg_item_top_gray);
             helper.setGone(R.id.lin_bottom,true);
             adapter.setShowWin(true);
             helper.setGone(R.id.iv_cup,true);
+            helper.setText(R.id.tv_state, null);
         }else {
             helper.setBackgroundRes(R.id.lin_top,R.drawable.bg_item_top_gray);
             helper.setGone(R.id.lin_bottom,false);
             adapter.setShowWin(false);
             helper.setGone(R.id.iv_cup,false);
+            helper.setText(R.id.tv_state, null);
         }
         RecyclerView rvList=helper.getView(R.id.rv_list);
         rvList.setLayoutManager(new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false));

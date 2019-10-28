@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.allenliu.versionchecklib.v2.AllenVersionChecker;
 import com.allenliu.versionchecklib.v2.builder.UIData;
@@ -27,7 +25,6 @@ import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.tools.AppManager;
 import com.betbtc.app.tools.FragmentUtil;
-import com.betbtc.app.tools.ProgressDialog;
 import com.betbtc.app.ui.fragment.BetRecordFragment;
 import com.betbtc.app.ui.fragment.DataFragment;
 import com.betbtc.app.ui.fragment.HomeFragment;

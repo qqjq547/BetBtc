@@ -17,9 +17,9 @@ import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.tools.PrefUtil;
 import com.betbtc.app.ui.activity.login.LoginActivity;
+import com.gyf.immersionbar.ImmersionBar;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SplashActivity extends MvpActivity {
 
@@ -28,6 +28,8 @@ public class SplashActivity extends MvpActivity {
     ImageView ivIcon;
     @BindView(R.id.tv_name)
     TextView tvName;
+
+    AnimatorSet animatorSet;
 
     @Override
     protected BasePresenter createPresenter() {
@@ -40,11 +42,23 @@ public class SplashActivity extends MvpActivity {
     }
 
     @Override
-    public void initViewAndData() {
-        startAnim();
+    protected void onCreate(Bundle savedInstanceState) {
+        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+            finish();
+            return;
+        }
+        super.onCreate(savedInstanceState);
+        ImmersionBar.with(this).fullScreen(true).init();
     }
+    @Override
+    public void initViewAndData() {
+//        startAnim();
+        start();
+    }
+
+
     public void startAnim() {
-        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet = new AnimatorSet();
         ObjectAnimator animator1 = ObjectAnimator.ofFloat(ivIcon, "scaleX", 0f, 1f);
         ObjectAnimator animator2 = ObjectAnimator.ofFloat(ivIcon, "scaleY", 0f, 1f);
         ObjectAnimator animator3 = ObjectAnimator.ofFloat(tvName, "translationY", CommonUtil.dp2px(this, 50),0f);
@@ -60,26 +74,11 @@ public class SplashActivity extends MvpActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (PrefUtil.getInstance().getBoolean(PrefUtil.ISFRIST, true)) {
-                            startActivity(new Intent(SplashActivity.this, StartActivity.class));
-                            PrefUtil.getInstance().setBoolean(PrefUtil.ISFRIST, false);
-                        } else {
-                            if (TextUtils.isEmpty(PrefUtil.getInstance().getString(PrefUtil.USER_TOKEN,""))){
-                                startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                            }else {
-                                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                            }
-                        }
-                    }
-                }, 1000);
+                start();
             }
 
             @Override
             public void onAnimationCancel(Animator animation) {
-
             }
 
             @Override
@@ -90,4 +89,23 @@ public class SplashActivity extends MvpActivity {
         animatorSet.start();
     }
 
+
+    public void start() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (PrefUtil.getInstance().getBoolean(PrefUtil.ISFRIST, true)) {
+                    startActivity(new Intent(SplashActivity.this, StartActivity.class));
+                    PrefUtil.getInstance().setBoolean(PrefUtil.ISFRIST, false);
+                } else {
+                    if (!TextUtils.isEmpty(PrefUtil.getInstance().getString(PrefUtil.USER_TOKEN, ""))) {
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    } else {
+                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    }
+                }
+                finish();
+            }
+        }, 1500);
+    }
 }

@@ -1,10 +1,6 @@
 package com.betbtc.app.ui.activity.login;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,8 +14,6 @@ import android.widget.TextView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
-import com.betbtc.app.http.subscriber.CountDownSubscriber;
-import com.betbtc.app.tools.ColorUtils;
 import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.tools.Constant;
 import com.betbtc.app.tools.LogUtil;
@@ -31,25 +25,12 @@ import com.betbtc.app.view.ClearEditText;
 import com.betbtc.app.view.PasswordEditText;
 import com.hjq.toast.ToastUtils;
 
-import net.lucode.hackware.magicindicator.FragmentContainerHelper;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
-import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
-
-import javax.annotation.Resource;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import rx.functions.Action0;
 
 public class LoginActivity extends MvpActivity {
     @BindView(R.id.rbtn_code)
@@ -118,10 +99,17 @@ public class LoginActivity extends MvpActivity {
             }
         });
         rbtnCode.setChecked(true);
-        initSms();
+
     }
 
-    @OnClick({R.id.lin_country,R.id.tv_getcode, R.id.btb_login, R.id.tv_register, R.id.tv_forget_pwd})
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SMSSDK.unregisterAllEventHandler();
+        SMSSDK.registerEventHandler(eh);
+    }
+
+    @OnClick({R.id.lin_country, R.id.tv_getcode, R.id.btb_login, R.id.tv_register, R.id.tv_forget_pwd, R.id.tv_onekey_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lin_country:
@@ -167,6 +155,7 @@ public class LoginActivity extends MvpActivity {
                                 ProgressDialog.stop();
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 PrefUtil.getInstance().setString(PrefUtil.USER_TOKEN,mobile);
+                                finish();
                             }
                         },2000);
                     }
@@ -178,6 +167,10 @@ public class LoginActivity extends MvpActivity {
             case R.id.tv_forget_pwd:
                 startActivity(new Intent(this,ForgetPwdActivity.class));
                 break;
+            case R.id.tv_onekey_login:
+                startActivity(new Intent(this, OneKeyLoginActivity.class));
+                break;
+
         }
     }
 
@@ -213,49 +206,48 @@ public class LoginActivity extends MvpActivity {
       }
 
   }
-  public void initSms(){
-      EventHandler eh=new EventHandler(){
 
-          @Override
-          public void afterEvent(int event, int result, Object data) {
-              LogUtil.d("event="+event+",data="+data);
-              if (result == SMSSDK.RESULT_COMPLETE) {
-                  //回调完成
-                  if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                      //提交验证码成功
-                      runOnUiThread(new Runnable() {
-                          @Override
-                          public void run() {
-                              ProgressDialog.stop();
-                              startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                          }
-                      });
-                  }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
-                      //获取验证码成功
-                      runOnUiThread(new Runnable() {
-                          @Override
-                          public void run() {
-                              ProgressDialog.stop();
-                              sendCode();
-                          }
-                      });
-                  }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
-                      //返回支持发送验证码的国家列表
-                  }
-              }else{
-                  ((Throwable)data).printStackTrace();
-                  runOnUiThread(new Runnable() {
-                      @Override
-                      public void run() {
-                          ProgressDialog.stop();
-                          ToastUtils.show(((Throwable)data).getMessage());
-                      }
-                  });
-              }
-          }
-      };
-      SMSSDK.registerEventHandler(eh); //注册
-  }
+    EventHandler eh = new EventHandler() {
+
+        @Override
+        public void afterEvent(int event, int result, Object data) {
+            LogUtil.d("event=" + event + ",data=" + data);
+            if (result == SMSSDK.RESULT_COMPLETE) {
+                //回调完成
+                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                    //提交验证码成功
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ProgressDialog.stop();
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    });
+                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                    //获取验证码成功
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ProgressDialog.stop();
+                            sendCode();
+                        }
+                    });
+                } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
+                    //返回支持发送验证码的国家列表
+                }
+            } else {
+                ((Throwable) data).printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ProgressDialog.stop();
+                        ToastUtils.show(((Throwable) data).getMessage());
+                    }
+                });
+            }
+        }
+    };
     private void sendCode() {
         RxUtil.countdown(60)
                 .doOnSubscribe(disposable -> {
@@ -287,5 +279,10 @@ public class LoginActivity extends MvpActivity {
                 });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SMSSDK.unregisterEventHandler(eh);
 
+    }
 }

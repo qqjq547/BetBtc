@@ -3,7 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<include layout="@layout/layout_title"/>
+
+    <include layout="@layout/layout_title" />
+
     <LinearLayout
         android:id="@+id/lin_person_info"
         android:layout_width="match_parent"
@@ -13,20 +15,24 @@
         android:background="@color/bg_white"
         android:paddingLeft="@dimen/space15"
         android:paddingRight="@dimen/space15">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_black"
             android:textSize="@dimen/textfont14"
-            android:text="@string/avatar"/>
+            android:text="@string/avatar" />
+
         <ImageView
             android:id="@+id/iv_avatar"
             android:layout_width="@dimen/space60"
             android:layout_height="@dimen/space60"
-            android:src="@drawable/ic_default_head"/>
+            android:src="@drawable/ic_default_head" />
     </LinearLayout>
-    <include layout="@layout/layout_divide_line"/>
+
+    <include layout="@layout/layout_divide_line" />
+
     <LinearLayout
         android:id="@+id/lin_nick_name"
         android:layout_width="match_parent"
@@ -35,13 +41,15 @@
         android:background="@color/bg_white"
         android:paddingLeft="@dimen/space15"
         android:paddingRight="@dimen/space15">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_black"
             android:textSize="@dimen/textfont14"
-            android:text="@string/nickname"/>
+            android:text="@string/nickname" />
+
         <TextView
             android:id="@+id/tv_nick_name"
             android:layout_width="wrap_content"
@@ -50,9 +58,11 @@
             android:textSize="@dimen/textfont14"
             android:text="@string/un_setting"
             android:drawablePadding="@dimen/space5"
-            android:drawableRight="@drawable/ic_arrow_right"/>
+            android:drawableRight="@drawable/ic_arrow_right" />
     </LinearLayout>
-    <include layout="@layout/layout_divide_line"/>
+
+    <include layout="@layout/layout_divide_line" />
+
     <LinearLayout
         android:id="@+id/lin_gender"
         android:layout_width="match_parent"
@@ -61,13 +71,15 @@
         android:background="@color/bg_white"
         android:paddingLeft="@dimen/space15"
         android:paddingRight="@dimen/space15">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_black"
             android:textSize="@dimen/textfont14"
-            android:text="@string/gender"/>
+            android:text="@string/gender" />
+
         <TextView
             android:id="@+id/tv_gender"
             android:layout_width="wrap_content"
@@ -76,9 +88,11 @@
             android:textSize="@dimen/textfont14"
             android:text="@string/un_setting"
             android:drawablePadding="@dimen/space5"
-            android:drawableRight="@drawable/ic_arrow_right"/>
+            android:drawableRight="@drawable/ic_arrow_right" />
     </LinearLayout>
-    <include layout="@layout/layout_divide_line"/>
+
+    <include layout="@layout/layout_divide_line" />
+
     <LinearLayout
         android:id="@+id/lin_birthday"
         android:layout_width="match_parent"
@@ -87,13 +101,15 @@
         android:background="@color/bg_white"
         android:paddingLeft="@dimen/space15"
         android:paddingRight="@dimen/space15">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_black"
             android:textSize="@dimen/textfont14"
-            android:text="@string/birthday"/>
+            android:text="@string/birthday" />
+
         <TextView
             android:id="@+id/tv_birthday"
             android:layout_width="wrap_content"
@@ -102,7 +118,8 @@
             android:textSize="@dimen/textfont14"
             android:text="@string/un_setting"
             android:drawablePadding="@dimen/space5"
-            android:drawableRight="@drawable/ic_arrow_right"/>
+            android:drawableRight="@drawable/ic_arrow_right" />
     </LinearLayout>
-    <include layout="@layout/layout_divide_line"/>
+
+    <include layout="@layout/layout_divide_line" />
 </LinearLayout>

@@ -16,6 +16,8 @@ public class HomeBetAdapter extends BaseQuickAdapter<HomeBet,BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, HomeBet item) {
+        helper.addOnClickListener(R.id.iv_rise_add);
+        helper.addOnClickListener(R.id.iv_fall_add);
         helper.setText(R.id.tv_title,item.getTitle());
     }
 }

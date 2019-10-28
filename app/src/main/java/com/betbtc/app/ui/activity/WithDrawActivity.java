@@ -11,13 +11,9 @@ import android.widget.TextView;
 import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
-import com.betbtc.app.tools.Constant;
 import com.betbtc.app.ui.activity.common.MyCaptureActivity;
-import com.donkingliang.imageselector.utils.ImageSelector;
 import com.hjq.toast.ToastUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-
-import java.security.Permission;
 
 import butterknife.BindView;
 import butterknife.OnClick;

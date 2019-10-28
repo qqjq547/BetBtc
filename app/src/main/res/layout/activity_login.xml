@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:focusable="true">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scaleType="centerCrop"
-    android:src="@drawable/bg_user_top"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user_top" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -146,6 +146,7 @@
                     android:textColor="@color/text_white"
                     android:textSize="@dimen/textfont12" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/lin_pwd"
                 android:layout_width="match_parent"
@@ -184,10 +185,12 @@
                 android:text="@string/login"
                 android:textColor="@color/text_white"
                 android:textSize="@dimen/textfont15" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space20">
+
                 <TextView
                     android:id="@+id/tv_register"
                     android:layout_width="wrap_content"
@@ -195,7 +198,8 @@
                     android:layout_alignParentLeft="true"
                     android:textColor="@color/text_white"
                     android:textSize="@dimen/textfont13"
-                    android:text="@string/register_account"/>
+                    android:text="@string/register_account" />
+
                 <TextView
                     android:id="@+id/tv_forget_pwd"
                     android:layout_width="wrap_content"
@@ -203,8 +207,19 @@
                     android:layout_alignParentRight="true"
                     android:textColor="@color/text_white"
                     android:textSize="@dimen/textfont13"
-                    android:text="@string/forget_pwd"/>
+                    android:text="@string/forget_pwd" />
             </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_onekey_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space30"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/textfont13"
+                android:text="@string/onekey_login"
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

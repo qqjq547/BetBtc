@@ -1,6 +1,7 @@
 <resources>
 
     <style name="AppTheme" parent="AppTheme.Base" />
+
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
@@ -13,9 +14,11 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
+
     <style name="FullScreenTheme" parent="AppTheme.Base">
         <item name="android:windowFullscreen">true</item>
     </style>
+
     <style name="rdbtn_nav">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -32,6 +35,7 @@
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">@dimen/textfont15</item>
     </style>
+
     <style name="dialog_progress" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -42,6 +46,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+
     <style name="dialog_bottom_full" parent="android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
@@ -50,6 +55,7 @@
         <item name="android:scrollHorizontally">false</item>
         <item name="android:windowAnimationStyle">@style/BottomToTopAnim</item>
     </style>
+
     <style name="BottomToTopAnim" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/bottomview_anim_enter</item>
         <item name="android:windowExitAnimation">@anim/bottomview_anim_exit</item>
@@ -70,6 +76,7 @@
         <!--<item name="android:scrollHorizontally">false</item>-->
         <item name="android:windowAnimationStyle">@style/BottomToTopAnim</item>
     </style>
+
     <style name="ViewClickStyle">
         <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
         <item name="android:clickable">true</item>

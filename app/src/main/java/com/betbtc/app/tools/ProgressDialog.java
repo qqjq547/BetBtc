@@ -1,16 +1,9 @@
 package com.betbtc.app.tools;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.AnimationDrawable;
-import android.text.TextUtils;
 import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.betbtc.app.R;
 
 

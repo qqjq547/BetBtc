@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space50"
+        android:layout_marginTop="@dimen/space150"
+        android:layout_marginRight="@dimen/space50"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quick_login"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/textfont22"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space30"
+            android:textSize="@dimen/textfont16"
+            android:textColor="@color/text_white"
+            android:text="@string/unknown_number" />
+
+        <TextView
+            android:id="@+id/tv_errmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space30"
+            android:textSize="@dimen/textfont12"
+            android:textColor="@color/text_red" />
+
+
+        <Button
+            android:id="@+id/btb_login"
+            style="@style/ViewClickStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space45"
+            android:layout_marginTop="@dimen/space30"
+            android:background="@drawable/bg_btn_normal"
+            android:text="@string/onekey_login"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/textfont15" />
+
+
+        <TextView
+            android:id="@+id/tv_other_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space50"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/textfont13"
+            android:text="@string/other_login_method" />
+
+    </LinearLayout>
+</FrameLayout>

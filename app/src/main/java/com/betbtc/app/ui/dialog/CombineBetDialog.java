@@ -9,7 +9,7 @@ import com.betbtc.app.R;
 import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpDialog;
 import com.betbtc.app.model.HomeMyBet;
-import com.betbtc.app.ui.adapter.HomeMyBetAdapter;
+import com.betbtc.app.ui.adapter.CombineBetAdapter;
 import com.betbtc.app.view.VerticalDecoration;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -18,12 +18,12 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class HomeBetDialog extends MvpDialog {
+public class CombineBetDialog extends MvpDialog {
     @BindView(R.id.rv_my_bet)
     RecyclerView rvMyBet;
 
-    HomeMyBetAdapter homeMyBetAdapter;
-    List<HomeMyBet> homeMyBetList=new ArrayList<>();
+    CombineBetAdapter homeMyBetAdapter;
+    List<HomeMyBet> homeMyBetList = new ArrayList<>();
 
     @Override
     protected BasePresenter createPresenter() {
@@ -32,21 +32,21 @@ public class HomeBetDialog extends MvpDialog {
 
     @Override
     public int getLayout() {
-        return R.layout.dialog_home_bet;
+        return R.layout.dialog_combine_bet;
     }
 
     @Override
     public void initViewAndData() {
-        rvMyBet.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+        rvMyBet.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         rvMyBet.addItemDecoration(new VerticalDecoration(getContext()));
         homeMyBetList.add(new HomeMyBet());
         homeMyBetList.add(new HomeMyBet());
         homeMyBetList.add(new HomeMyBet());
-        homeMyBetAdapter=new HomeMyBetAdapter(homeMyBetList);
+        homeMyBetAdapter = new CombineBetAdapter(homeMyBetList);
         homeMyBetAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.lin_info:
                         homeMyBetAdapter.expandItem(position);
                         break;

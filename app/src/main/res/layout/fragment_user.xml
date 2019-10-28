@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_theme">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/space200"
@@ -36,7 +37,7 @@
                 android:layout_width="@dimen/space72"
                 android:layout_height="@dimen/space72"
                 android:layout_marginLeft="@dimen/space20"
-                android:src="@drawable/ic_default_head"/>
+                android:src="@drawable/ic_default_head" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -52,7 +53,8 @@
                     android:textSize="@dimen/textfont16"
                     android:textColor="@color/text_white"
                     android:textStyle="bold"
-                    android:text="用户名称"/>
+                    android:text="用户名称" />
+
                 <TextView
                     android:id="@+id/tv_level"
                     android:layout_width="wrap_content"
@@ -63,8 +65,9 @@
                     android:textColor="@color/text_yellow"
                     android:textSize="@dimen/space12"
                     android:textStyle="bold"
-                    android:text="LV 6"/>
+                    android:text="LV 6" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/tv_share"
                 android:layout_width="wrap_content"
@@ -77,7 +80,7 @@
                 android:textStyle="bold"
                 android:drawableRight="@drawable/ic_ercode"
                 android:drawablePadding="@dimen/space5"
-                android:text="@string/share"/>
+                android:text="@string/share" />
         </LinearLayout>
 
         <View
@@ -85,6 +88,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,23 +99,27 @@
         android:layout_marginBottom="@dimen/space15"
         android:elevation="@dimen/space3"
         android:background="@drawable/bg_item_white">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/space12"
             android:paddingBottom="@dimen/space12">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/textfont14"
                     android:textColor="@color/text_gray"
-                    android:text="@string/account_balance"/>
+                    android:text="@string/account_balance" />
+
                 <TextView
                     android:id="@+id/tv_balance"
                     android:layout_width="wrap_content"
@@ -120,30 +128,34 @@
                     android:textSize="@dimen/textfont20"
                     android:textColor="@color/text_black"
                     android:textStyle="bold"
-                    android:text="12343.23"/>
+                    android:text="12343.23" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textfont14"
                         android:textColor="@color/text_gray"
-                        android:text="@string/platom_award"/>
+                        android:text="@string/platom_award" />
+
                     <ImageView
                         android:id="@+id/iv_tip"
                         android:layout_width="@dimen/space12"
                         android:layout_height="@dimen/space12"
                         android:layout_marginLeft="@dimen/space5"
-                        android:src="@drawable/ic_tip"/>
+                        android:src="@drawable/ic_tip" />
                 </LinearLayout>
 
                 <TextView
@@ -154,13 +166,15 @@
                     android:textSize="@dimen/textfont20"
                     android:textColor="@color/text_black"
                     android:textStyle="bold"
-                    android:text="12343.23"/>
+                    android:text="12343.23" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
+
             <TextView
                 android:id="@+id/tv_recharge"
                 android:layout_width="0dp"
@@ -171,12 +185,13 @@
                 android:textSize="@dimen/textfont14"
                 android:textStyle="bold"
                 android:padding="@dimen/space12"
-                android:text="@string/recharge"
-                />
+                android:text="@string/recharge" />
+
             <View
                 android:layout_width="@dimen/divide_h"
                 android:layout_height="@dimen/space20"
-                android:background="@color/bg_divide"/>
+                android:background="@color/bg_divide" />
+
             <TextView
                 android:id="@+id/tv_withdraw"
                 android:layout_width="0dp"
@@ -187,8 +202,7 @@
                 android:textSize="@dimen/textfont14"
                 android:textStyle="bold"
                 android:padding="@dimen/space12"
-                android:text="@string/widthdraw"
-                />
+                android:text="@string/widthdraw" />
         </LinearLayout>
     </LinearLayout>
 
@@ -200,7 +214,8 @@
         android:layout_marginRight="@dimen/space15"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_user_banner"
-        android:elevation="@dimen/space4"/>
+        android:elevation="@dimen/space4" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu"
         android:layout_width="match_parent"
@@ -211,5 +226,5 @@
         android:layout_marginRight="@dimen/space15"
         android:layout_marginTop="@dimen/space15"
         android:layout_marginBottom="@dimen/space15"
-        android:padding="@dimen/space15"/>
+        android:padding="@dimen/space15" />
 </LinearLayout>

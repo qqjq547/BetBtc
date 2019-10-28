@@ -1,11 +1,8 @@
 package com.betbtc.app.ui.activity;
 
-import android.graphics.Color;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,27 +11,19 @@ import com.betbtc.app.base.BasePresenter;
 import com.betbtc.app.base.MvpActivity;
 import com.betbtc.app.model.HistoryItem;
 import com.betbtc.app.tools.ColorUtils;
-import com.betbtc.app.tools.CommonUtil;
 import com.betbtc.app.ui.adapter.LotteryTypeDetailAdapter;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.model.GradientColor;
-import com.github.mikephil.charting.renderer.YAxisRenderer;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LotteryTypeDetailActivity extends MvpActivity {
@@ -96,23 +85,23 @@ public class LotteryTypeDetailActivity extends MvpActivity {
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
-        xAxis.setAxisMinimum(0);
         xAxis.setGranularity(1f);
         xAxis.setCenterAxisLabels(true);
+        xAxis.setAvoidFirstLastClipping(true);
 
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
         leftAxis.setSpaceTop(10f);
         leftAxis.setAxisMinimum(0f);
 
-
-        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(true);
 
         // add a nice and smooth animation
         barChart.animateY(1000);
         barChart.getAxisRight().setEnabled(false);
         barChart.getLegend().setEnabled(false);
-        barChart.setAutoScaleMinMaxEnabled(true);
+        barChart.setAutoScaleMinMaxEnabled(false);
+        barChart.setDrawValueAboveBar(true);
 
     }
     public void initChartData(){

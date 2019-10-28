@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/space15">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
         android:nestedScrollingEnabled="false"
-        android:background="@drawable/bg_sheet_item">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:background="@drawable/bg_sheet_item"></androidx.recyclerview.widget.RecyclerView>
+
     <TextView
         android:id="@+id/tv_cancel"
         style="@style/ViewClickStyle"
@@ -22,5 +23,5 @@
         android:gravity="center"
         android:textColor="@color/text_gray_drak"
         android:textSize="@dimen/textfont15"
-        android:text="@string/cancel"/>
+        android:text="@string/cancel" />
 </LinearLayout>
